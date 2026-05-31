@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/></svg>">
+    <title>EcoTote | Sustainable Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#0d9488' } } } // Ocean Teal
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300 text-slate-800 dark:text-slate-100">
+
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo -->
+             <a href="index.html">
+                <div class="flex items-center gap-2 shrink-0">
+                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                </svg>
+                <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+            </div>
+             </a>
+            
+
+<div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
+    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    
+    <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+        
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+            Dashboard
+            <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
+        </button>
+
+        <div x-show="open"
+             x-cloak
+             x-transition
+             class="bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 rounded-lg w-40 z-[999]
+                    lg:absolute lg:top-full lg:right-0 lg:mt-2
+                    block pl-4 py-2 lg:p-2">
+            
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                User
+            </a>
+        </div>
+    </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+    [x-cloak] { display: none !important; }
+</style>
+
+            <!-- Desktop Controls -->
+            <div class="hidden lg:flex items-center space-x-3 shrink-0">
+                <button id="themeToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
+                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
+                <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl p-2 z-50">☰</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
+        <a href="index.html" class="block py-2">Home</a>
+        <a href="home2.html" class="block py-2">Home2</a>
+         <a href="aboutus.html" class="block py-2">Aboutus</a>
+        <a href="shop.html" class="block py-2">Shop</a>
+        <a href="categories.html" class="block py-2">Categories</a>
+        <a href="deals.html" class="block py-2">Deals</a>
+        <a href="blog.html" class="block py-2">Blog</a>
+        <a href="contact.html" class="block py-2">Contact</a>
+       <div class="border-t border-slate-200 dark:border-slate-800 pt-2">
+        <button id="mobileDashBtn" class="w-full text-left font-bold py-2 flex justify-between items-center">
+            Dashboard <span>▼</span>
+        </button>
+        <div id="mobileDashContent" class="hidden pl-4 space-y-2">
+            <a href="user.html" class="block py-1 hover:text-primary">User</a>
+        </div>
+    </div>
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
+    
+    <div class="flex gap-3">
+        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
+            Shop Now
+        </a>
+        <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
+            Login
+        </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 py-2 border-t border-slate-200 dark:border-slate-800">
+        
+        <button id="mobileThemeToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+            <span id="mobileThemeIcon">🌙</span>
+        </button>
+
+        <button id="mobileRtlToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">
+            LTR
+        </button>
+        
+    </div>
+</div>
+    </div>
+</nav>
+<script>
+    // Automatic Active Link Highlight
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    // Get the filename from the link href
+    const linkPath = link.getAttribute('href');
+    
+    // Check if the current page matches the link
+    if (linkPath === currentPath) {
+        link.classList.add('text-primary', 'font-bold');
+        // If it's a sub-menu item, also bold the parent Dashboard link
+        if (link.closest('#mobileDashContent')) {
+            document.getElementById('mobileDashBtn').classList.add('text-primary');
+        }
+    }
+});
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+    const htmlElement = document.documentElement;
+
+    // 1. Initial State: Check localStorage on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        mobileThemeIcon.innerText = '☀️';
+    } else {
+        htmlElement.classList.remove('dark');
+        mobileThemeIcon.innerText = '🌙';
+    }
+
+    // 2. Click Interaction: Toggle and Save
+    mobileThemeToggle.addEventListener('click', () => {
+        const isDark = htmlElement.classList.toggle('dark');
+        
+        // Update Icon
+        mobileThemeIcon.innerText = isDark ? '☀️' : '🌙';
+        
+        // Save to LocalStorage
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    // Mobile LTR/RTL Toggle Logic
+const mobileRtlToggle = document.getElementById('mobileRtlToggle');
+
+// Load saved direction
+if (localStorage.dir) {
+    document.documentElement.dir = localStorage.dir;
+    mobileRtlToggle.innerText = localStorage.dir;
+}
+
+mobileRtlToggle.addEventListener('click', () => {
+    const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.dir = newDir;
+    localStorage.dir = newDir;
+    
+    // Update button text
+    mobileRtlToggle.innerText = newDir.toUpperCase();
+    
+    // Sync with any potential desktop LTR button
+    const desktopRtl = document.getElementById('rtlToggle');
+    if (desktopRtl) desktopRtl.innerText = newDir.toUpperCase();
+});
+    // Mobile Dashboard Dropdown Logic
+const mobileDashBtn = document.getElementById('mobileDashBtn');
+const mobileDashContent = document.getElementById('mobileDashContent');
+
+mobileDashBtn.addEventListener('click', () => {
+    mobileDashContent.classList.toggle('hidden');
+    // Optional: Rotate the arrow icon
+    const arrow = mobileDashBtn.querySelector('span');
+    arrow.innerText = mobileDashContent.classList.contains('hidden') ? '▼' : '▲';
+});
+    // Theme & RTL Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const rtlToggle = document.getElementById('rtlToggle');
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.theme = isDark ? 'dark' : 'light';
+        themeIcon.innerText = isDark ? '☀️' : '🌙';
+    });
+
+    rtlToggle.addEventListener('click', () => {
+        const dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+        document.documentElement.dir = dir;
+        localStorage.dir = dir;
+        rtlToggle.innerText = dir.toUpperCase();
+    });
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.innerText = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+    });
+</script>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-20 flex flex-col lg:flex-row items-center gap-12">
+    
+    <div class="flex-1 text-center lg:text-left space-y-6">
+        <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+            Carry Sustainability <span class="text-primary">Everywhere You Go</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto lg:mx-0">
+            Stylish, durable, and eco-friendly tote bags and accessories crafted for conscious living.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="shop.html" class="bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-teal-700 transition-all shadow-lg shadow-teal-500/20 active:scale-95">
+                Shop Collection
+            </a>
+            <a href="categories.html" class="border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95">
+                Explore Sustainable Materials
+            </a>
+        </div>
+    </div>
+
+    <div class="flex-1 w-full max-w-md lg:max-w-none">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="assets/Sustainable Tote Bag1" 
+                 alt="Sustainable Tote Bag" 
+                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+            
+            <div class="absolute bottom-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4 rounded-xl border border-white/20 shadow-lg">
+                <p class="text-sm font-bold text-primary">100% Organic Cotton</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center">Featured Collections</h2>
+    
+    <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6">
+        
+        <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Everyday Tote Bags" alt="Everyday Tote" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Everyday Tote Bags</h3>
+            <div class="flex flex-col gap-2">
+                <a href="bestsellers/everydaytote.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+        </div>
+
+        <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Organic Cotton Totes" alt="Organic Cotton" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Organic Cotton Totes</h3>
+            <div class="flex flex-col gap-2">
+                <a href="shopbylifestyle/outdoorbag.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+        </div>
+
+        <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Recycled Canvas Bags" alt="Recycled Canvas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Recycled Canvas Bags</h3>
+            <div class="flex flex-col gap-2">
+                <a href="categories/reusableshoppingbags.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+        </div>
+         <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Reusable Bags" alt="Recycled Canvas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Recycled Canvas Bags</h3>
+            <div class="flex flex-col gap-2">
+                <a href="categories/shopbylifestyle/outdoorbag.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+        </div>
+
+       
+
+        <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Travel Accessories" alt="Travel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Travel Accessories</h3>
+            <div class="flex flex-col gap-2">
+                <a href="shopbylifestyle/travelbags.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+        </div>
+
+        <div class="group relative flex flex-col space-y-3">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                <img src="assets/Eco-Friendly Pouches" alt="Pouches" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+            </div>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Eco-Friendly Pouches</h3>
+            <div class="flex flex-col gap-2">
+                <a href="categories/pouches.html">
+              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
+
+                </a>
+                <a href="categories.html">
+                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
+
+                </a>
+            </div>
+            </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16 bg-slate-50 dark:bg-slate-900">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-16 text-center">Why Choose Our Products?</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Feature 1 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l3-9a5.002 5.002 0 00-6.001 0M6 7v7m0 0l-3 9a5.002 5.002 0 006.001 0M6 14l3-1m6-6l3 1m0 0l3-9a5.002 5.002 0 00-6.001 0M15 7v7m0 0l-3 9a5.002 5.002 0 006.001 0M15 14l3-1"></path></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Sustainable Materials</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Made from organic cotton, recycled fabrics, and responsibly materials.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Built to Last</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Strong stitching and premium craftsmanship designed for daily use.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Ethical Production</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Manufactured through fair and responsible production practices.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-primary">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Minimal Impact</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Reducing waste with reusable alternatives to disposable products.</p>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <div class="flex justify-between items-end mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Best Sellers</h2>
+        <a href="#" class="text-primary font-medium hover:underline">View All</a>
+    </div>
+
+    <!-- Best Sellers Grid (Responsive: 1 -> 2 -> 3 columns) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Tote" alt="Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Organic Cotton</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Signature Tote</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★☆ <span class="text-slate-400 text-xs ml-1">(128)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$29.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Market Bag1" alt="Market Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Recycled Canvas</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Market Bag</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★★ <span class="text-slate-400 text-xs ml-1">(94)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$24.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Travel Organizer" alt="Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Canvas Blend</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Travel Organizer</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★☆ <span class="text-slate-400 text-xs ml-1">(82)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$35.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Gift Bag" alt="Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Reusable Hemp</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Gift Bag</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★★ <span class="text-slate-400 text-xs ml-1">(210)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$15.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Eco Pouch" alt="Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Organic Linen</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Eco Pouch</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★☆ <span class="text-slate-400 text-xs ml-1">(56)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$12.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4 transition-all hover:shadow-xl">
+            <div class="relative aspect-square rounded-xl overflow-hidden mb-4">
+                <img src="assets/Denim Tote1" alt="Eco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Upcycled Denim</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Denim Tote</h3>
+            <div class="flex items-center gap-1 mb-3 text-amber-400 text-sm">★★★★★ <span class="text-slate-400 text-xs ml-1">(142)</span></div>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="font-bold text-slate-900 dark:text-white">$32.00</span>
+                <button class="bg-primary text-white p-2 rounded-lg hover:bg-teal-700 transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-16 text-center">Our Sustainability Promise</h2>
+    
+    <!-- 4-Column Grid (No Lines) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl border-2 border-primary">01</div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Material Sourcing</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Certified organic & recycled fabrics for conscious creation.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl border-2 border-primary">02</div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Ethical Production</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Fair wages and safe working conditions are our top priority.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl border-2 border-primary">03</div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Quality Inspection</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Rigorous checks to ensure durability and long-term use.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl border-2 border-primary">04</div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Eco-Delivery</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Plastic-free packaging with carbon-conscious shipping.</p>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">Lifestyle Inspiration</h2>
+
+    <!-- Responsive Grid: 1 col mobile, 2 col tablet, 4 col desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80">
+            <img src="assets/Farmers Market" alt="Farmers Market" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-6 text-white transform transition-transform duration-500 group-hover:-translate-y-2">
+                <h3 class="text-lg font-semibold mb-1">Farmers Market</h3>
+                <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Fresh essentials.</p>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80">
+            <img src="assets/daily" alt="Daily Commute" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-6 text-white transform transition-transform duration-500 group-hover:-translate-y-2">
+                <h3 class="text-lg font-semibold mb-1">Daily Commute</h3>
+                <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Style for your transit.</p>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"></div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80">
+            <img src="assets/beach Trips" alt="Beach Trips" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-6 text-white transform transition-transform duration-500 group-hover:-translate-y-2">
+                <h3 class="text-lg font-semibold mb-1">Beach Trips</h3>
+                <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Sun, sand, and style.</p>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"></div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80">
+            <img src="assets/Work & Study" alt="Work & Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-6 text-white transform transition-transform duration-500 group-hover:-translate-y-2">
+                <h3 class="text-lg font-semibold mb-1">Work & Study</h3>
+                <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Organized productivity.</p>
+            </div>
+            <div class="absolute inset-0 border-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"></div>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">What Our Community Says</h2>
+
+    <!-- 4-Card Responsive Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Review Card 1 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/saraha" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Sarah J.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">The perfect everyday tote. Durable, stylish, and environmentally.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Signature Tote</div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/b1" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Mike R.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Finally, a bag that handles my daily commute and helps me ditch.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Market Bag</div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/elena" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Elena V.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Love the quality. It feels premium and I get compliments everywhere.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Travel Organizer</div>
+        </div>
+
+        <!-- Review Card 4 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/b2" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">David L.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Sustainable and beautiful. Highly recommend to any conscious.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Reusable Gift Bag</div>
+        </div>
+
+    </div>
+</section>
+<section id="impact-section" class="max-w-7xl mx-auto px-4 lg:px-8 py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        
+        <!-- Counter 1 -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-primary mb-2" data-target="50000">0+</h2>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">Reusable Bags Sold</p>
+        </div>
+
+        <!-- Counter 2 -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-primary mb-2" data-target="1000000">0+</h2>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">Plastic Bags Avoided</p>
+        </div>
+
+        <!-- Counter 3 -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-primary mb-2" data-target="10000">0+</h2>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">Happy Customers</p>
+        </div>
+
+        <!-- Counter 4 -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-primary mb-2">100%</h2>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">Plastic-Free Packaging</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const counters = document.querySelectorAll('[data-target]');
+    const section = document.getElementById('impact-section');
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+            const count = +counter.innerText.replace('+', '').replace(',', '');
+            const increment = target / 100;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment).toLocaleString() + '+';
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target.toLocaleString() + '+';
+            }
+        };
+        updateCount();
+    };
+
+    // Trigger animation only when section is visible
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            counters.forEach(animateCounter);
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(section);
+</script>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <div class="flex justify-between items-end mb-10">
+        <div>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">New Arrivals</h2>
+            <p class="text-slate-600 dark:text-slate-400">Discover our latest eco-conscious designs.</p>
+        </div>
+        <div class="hidden lg:flex gap-2">
+            <button class="p-2 rounded-full border border-slate-300 hover:bg-primary hover:text-white transition-all">←</button>
+            <button class="p-2 rounded-full border border-slate-300 hover:bg-primary hover:text-white transition-all">→</button>
+        </div>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x">
+        
+        <!-- Card 1: Latest Tote -->
+        <div class="snap-start shrink-0 w-[280px] lg:w-[calc(25%-18px)] group">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-4 relative">
+                <img src="assets/Urban Minimal Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">NEW</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Urban Minimal Tote</h3>
+            <p class="text-sm text-slate-500">Latest Design</p>
+        </div>
+
+        <!-- Card 2: Seasonal Colors -->
+        <div class="snap-start shrink-0 w-[280px] lg:w-[calc(25%-18px)] group">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-4 relative">
+                <img src="assets/Autumn Earth Tone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded">SEASONAL</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Autumn Earth Tone</h3>
+            <p class="text-sm text-slate-500">Seasonal Colors</p>
+        </div>
+
+        <!-- Card 3: Limited Edition -->
+        <div class="snap-start shrink-0 w-[280px] lg:w-[calc(25%-18px)] group">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-4 relative">
+                <img src="assets/Artist Series Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-bold px-2 py-1 rounded">LIMITED</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Artist Series Tote</h3>
+            <p class="text-sm text-slate-500">Limited Edition</p>
+        </div>
+
+        <!-- Card 4: Sustainable Bundle -->
+        <div class="snap-start shrink-0 w-[280px] lg:w-[calc(25%-18px)] group">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-4 relative">
+                <img src="assets/Essentials Bundle1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded">BUNDLE</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Essentials Bundle</h3>
+            <p class="text-sm text-slate-500">Accessory Set</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Add this to your Tailwind config or custom CSS to hide scrollbars -->
+<style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <div class="bg-primary rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left shadow-2xl shadow-primary/20">
+        
+        <!-- CTA Text -->
+        <div class="max-w-xl text-white">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-4 leading-tight">
+                Ready to Join the Sustainable Movement?
+            </h2>
+            <p class="text-lg lg:text-xl font-medium opacity-90">
+                Explore our collection and make a conscious choice for the planet, one bag at a time.
+            </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+            <a href="shop.html" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all active:scale-95 shadow-lg">
+                Shop Now
+            </a>
+            <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all active:scale-95">
+                Get in Touch
+            </a>
+        </div>
+    </div>
+</section>
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+           <div>
+    <a href="index.html">
+        <div class="flex items-center gap-2 shrink-0">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+            <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+        </div>
+    </a>
+    <p class="text-slate-600 dark:text-slate-400 mt-2 mb-4">Crafting sustainable style for a conscious lifestyle.</p>
+    
+    <div class="flex gap-4">
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8A5.8,5.8 0 0,1 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 1,1 18.5,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7.01h-2.54v-2.9h2.54V9.78c0-2.5 1.49-3.89 3.76-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34v7.01c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6c-0.77,0.35-1.6,0.58-2.46,0.69c0.88-0.53,1.56-1.37,1.88-2.38c-0.83,0.5-1.75,0.85-2.72,1.05C18.37,4.5,17.26,4,16,4c-2.35,0-4.27,1.92-4.27,4.29c0,0.34,0.04,0.67,0.11,0.98C8.28,9.09,5.11,7.38,3,4.79c-0.37,0.63-0.58,1.37-0.58,2.15c0,1.49,0.75,2.81,1.91,3.56C3.71,10.5,3.09,10.32,2.5,10c0,0.02,0,0.03,0,0.05c0,2.08,1.48,3.82,3.44,4.22c-0.36,0.1-0.74,0.15-1.13,0.15c-0.28,0-0.55-0.03-0.81-0.08c0.55,1.71,2.14,2.95,4.03,2.98c-1.47,1.15-3.34,1.84-5.36,1.84c-0.35,0-0.69-0.02-1.03-0.06C4.47,20.18,6.65,21,9,21c7.2,0,11.13-5.96,11.13-11.13c0-0.17,0-0.34-0.01-0.51C20.96,7.61,21.78,6.86,22.46,6z" /></svg>
+        </a>
+    </div>
+</div>
+           <div>
+    <h3 class="font-bold mb-4">Quick Links</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a></li>
+        <li><a href="shop.html" class="hover:text-primary transition-colors">Shop</a></li>
+        <li><a href="categories.html" class="hover:text-primary transition-colors">Categories</a></li>
+        <li><a href="deals.html" class="hover:text-primary transition-colors">Deals</a></li>
+
+    </ul>
+</div>
+
+<div>
+    <h3 class="font-bold mb-4">Support & Info</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        <li><a href="shopnow.html" class="hover:text-primary transition-colors">Shop Now</a></li>
+        <li><a href="404.html" class="hover:text-primary transition-colors">404 Page</a></li>
+        <li><a href="comingsoon.html" class="hover:text-primary transition-colors">Coming Soon</a></li>
+    </ul>
+</div>
+            <div>
+                <h3 class="font-bold mb-4">Newsletter</h3>
+                <input type="email" placeholder="Email address" class="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent mb-2">
+                <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/></svg>">
+    <title>EcoTote | Sustainable Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#0d9488' } } } // Ocean Teal
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300 text-slate-800 dark:text-slate-100">
+
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo -->
+             <a href="index.html">
+                <div class="flex items-center gap-2 shrink-0">
+                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                </svg>
+                <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+            </div>
+             </a>
+            
+
+<div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
+    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    
+    <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+        
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+            Dashboard
+            <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
+        </button>
+
+        <div x-show="open"
+             x-cloak
+             x-transition
+             class="bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 rounded-lg w-40 z-[999]
+                    lg:absolute lg:top-full lg:right-0 lg:mt-2
+                    block pl-4 py-2 lg:p-2">
+            
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                User
+            </a>
+        </div>
+    </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+    [x-cloak] { display: none !important; }
+</style>
+
+            <!-- Desktop Controls -->
+            <div class="hidden lg:flex items-center space-x-3 shrink-0">
+                <button id="themeToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
+                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
+                <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl p-2 z-50">☰</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
+        <a href="index.html" class="block py-2">Home</a>
+        <a href="home2.html" class="block py-2">Home2</a>
+         <a href="aboutus.html" class="block py-2">Aboutus</a>
+        <a href="shop.html" class="block py-2">Shop</a>
+        <a href="categories.html" class="block py-2">Categories</a>
+        <a href="deals.html" class="block py-2">Deals</a>
+        <a href="blog.html" class="block py-2">Blog</a>
+        <a href="contact.html" class="block py-2">Contact</a>
+       <div class="border-t border-slate-200 dark:border-slate-800 pt-2">
+        <button id="mobileDashBtn" class="w-full text-left font-bold py-2 flex justify-between items-center">
+            Dashboard <span>▼</span>
+        </button>
+        <div id="mobileDashContent" class="hidden pl-4 space-y-2">
+            <a href="user.html" class="block py-1 hover:text-primary">User</a>
+        </div>
+    </div>
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
+    
+    <div class="flex gap-3">
+        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
+            Shop Now
+        </a>
+        <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
+            Login
+        </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 py-2 border-t border-slate-200 dark:border-slate-800">
+        
+        <button id="mobileThemeToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+            <span id="mobileThemeIcon">🌙</span>
+        </button>
+
+        <button id="mobileRtlToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">
+            LTR
+        </button>
+        
+    </div>
+</div>
+    </div>
+</nav>
+
+<script>
+    // Automatic Active Link Highlight
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    // Get the filename from the link href
+    const linkPath = link.getAttribute('href');
+    
+    // Check if the current page matches the link
+    if (linkPath === currentPath) {
+        link.classList.add('text-primary', 'font-bold');
+        // If it's a sub-menu item, also bold the parent Dashboard link
+        if (link.closest('#mobileDashContent')) {
+            document.getElementById('mobileDashBtn').classList.add('text-primary');
+        }
+    }
+});
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+    const htmlElement = document.documentElement;
+
+    // 1. Initial State: Check localStorage on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        mobileThemeIcon.innerText = '☀️';
+    } else {
+        htmlElement.classList.remove('dark');
+        mobileThemeIcon.innerText = '🌙';
+    }
+
+    // 2. Click Interaction: Toggle and Save
+    mobileThemeToggle.addEventListener('click', () => {
+        const isDark = htmlElement.classList.toggle('dark');
+        
+        // Update Icon
+        mobileThemeIcon.innerText = isDark ? '☀️' : '🌙';
+        
+        // Save to LocalStorage
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    // Mobile LTR/RTL Toggle Logic
+const mobileRtlToggle = document.getElementById('mobileRtlToggle');
+
+// Load saved direction
+if (localStorage.dir) {
+    document.documentElement.dir = localStorage.dir;
+    mobileRtlToggle.innerText = localStorage.dir;
+}
+
+mobileRtlToggle.addEventListener('click', () => {
+    const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.dir = newDir;
+    localStorage.dir = newDir;
+    
+    // Update button text
+    mobileRtlToggle.innerText = newDir.toUpperCase();
+    
+    // Sync with any potential desktop LTR button
+    const desktopRtl = document.getElementById('rtlToggle');
+    if (desktopRtl) desktopRtl.innerText = newDir.toUpperCase();
+});
+    // Mobile Dashboard Dropdown Logic
+const mobileDashBtn = document.getElementById('mobileDashBtn');
+const mobileDashContent = document.getElementById('mobileDashContent');
+
+mobileDashBtn.addEventListener('click', () => {
+    mobileDashContent.classList.toggle('hidden');
+    // Optional: Rotate the arrow icon
+    const arrow = mobileDashBtn.querySelector('span');
+    arrow.innerText = mobileDashContent.classList.contains('hidden') ? '▼' : '▲';
+});
+    // Theme & RTL Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const rtlToggle = document.getElementById('rtlToggle');
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.theme = isDark ? 'dark' : 'light';
+        themeIcon.innerText = isDark ? '☀️' : '🌙';
+    });
+
+    rtlToggle.addEventListener('click', () => {
+        const dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+        document.documentElement.dir = dir;
+        localStorage.dir = dir;
+        rtlToggle.innerText = dir.toUpperCase();
+    });
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.innerText = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+    });
+</script>
+<section class="max-w-7xl mx-auto px-4 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        <!-- Left: Text Content -->
+        <div class="flex-1 text-center lg:text-left">
+            <span class="inline-block py-1 px-4 mb-6 rounded-full bg-teal-50 text-teal-700 font-bold text-xs uppercase tracking-widest border border-teal-100">
+                Ethically Crafted
+            </span>
+           <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-[1.05] 
+           text-slate-900 dark:text-white">
+    Sustainable Style for Every Journey
+</h1>
+            <p class="text-lg lg:text-xl text-slate-500 font-medium mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Thoughtfully crafted tote bags and eco-accessories designed to help you carry more while wasting less.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="shop.html" class="px-10 py-5 bg-teal-700 text-white rounded-2xl font-bold text-lg hover:bg-teal-800 transition-all active:scale-95 shadow-lg shadow-teal-700/20">
+                    Shop Now
+                </a>
+                <a href="aboutus.html" class="px-10 py-5 bg-white text-slate-900 border border-slate-200 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all active:scale-95">
+                    Our Mission
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: Hero Image -->
+        <div class="flex-1 w-full">
+            <div class="relative w-full aspect-[4/5] lg:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <img src="assets/Sustainable Tote Bag2" 
+                     alt="Sustainable Tote Bag" 
+                     class="w-full h-full object-cover">
+                <!-- Overlay for readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left: Collection Story -->
+        <div class="space-y-8">
+            <div>
+                <span class="inline-block py-1 px-4 mb-4 rounded-full bg-teal-50 text-teal-700 font-bold text-xs uppercase tracking-widest border border-teal-100">
+                    New Collection 2026
+                </span>
+               <h2 class="text-4xl lg:text-6xl font-bold leading-[1.1] mb-6 
+           text-slate-900 dark:text-white">
+    Rooted in Nature, Designed for Life.
+</h2>
+                <p class="text-lg text-slate-500 font-medium leading-relaxed mb-8">
+                    Discover our latest series crafted from regenerative fibers. This collection blends timeless aesthetics with earth-first engineering, ensuring your style footprint is as light as possible.
+                </p>
+            </div>
+
+            <!-- Sustainability Benefits -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex items-start gap-4">
+                    <div class="bg-teal-50 p-3 rounded-xl text-teal-700"><i data-lucide="leaf" class="w-6 h-6"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 dark:text-white">Regenerative Fibers</h4>
+                        <p class="text-xs text-slate-500 font-medium">Sourced from climate-positive farms.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-teal-50 p-3 rounded-xl text-teal-700"><i data-lucide="droplets" class="w-6 h-6"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 dark:text-white">Low-Impact Dye</h4>
+                        <p class="text-xs text-slate-500 font-medium">Water-saving natural pigment process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="shop.html" class="inline-block px-10 py-5 bg-teal-700 text-white rounded-2xl font-bold text-lg hover:bg-teal-800 transition-all active:scale-95 shadow-lg shadow-teal-700/20">
+                Shop Collection
+            </a>
+        </div>
+
+        <!-- Right: Professional Image Alignment -->
+        <div class="grid grid-cols-2 gap-4 lg:gap-6 items-center">
+            <!-- First Column -->
+            <div class="space-y-4 lg:space-y-6">
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <img src="assets/Autumn Earth Tone" alt="Product 1" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <img src="assets/Eco Pouch" alt="Product 2" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <!-- Second Column (Shifted Downward) -->
+            <div class="space-y-4 lg:space-y-6 translate-y-12">
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <img src="assets/Travel Accessories" alt="Product 3" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <img src="assets/Recycled Canvas Bags" alt="Product 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Shop by Lifestyle</h2>
+        <p class="text-slate-500 font-medium mt-2">Find the perfect bag for every chapter of your day.</p>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+        
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/daily" alt="Daily Commute" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Daily Commute</span>
+            </div>
+        </a>
+
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/Farmers Market" alt="Grocery Shopping" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Grocery Shopping</span>
+            </div>
+        </a>
+
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/Work & Study" alt="Work & Office" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Work & Office</span>
+            </div>
+        </a>
+
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/Travel Accessories" alt="Travel & Adventure" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Travel & Adventure</span>
+            </div>
+        </a>
+
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/beach Trips" alt="Beach & Weekend" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Beach & Weekend</span>
+            </div>
+        </a>
+
+        <!-- Category Item -->
+        <a href="shop.html" class="group relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900">
+            <img src="assets/Gift Bag" alt="Eco-Friendly Gifting" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-500">
+            <div class="absolute inset-0 flex items-end p-6">
+                <span class="px-5 py-3 bg-white text-slate-900 rounded-xl font-bold text-sm lg:text-base shadow-lg group-hover:bg-teal-700 group-hover:text-white transition-colors">Eco-Friendly Gifting</span>
+            </div>
+        </a>
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Best Sellers</h2>
+            <p class="text-slate-500 font-medium mt-2">Our community's most-loved essentials.</p>
+        </div>
+        <a href="#" class="text-teal-700 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+            View All Products <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/everyday Commute Tote bag" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">Trending</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Everyday Commute Tote</h3>
+            <div class="flex items-center gap-1 text-amber-400 mb-3"><i data-lucide="star" class="w-3 h-3 fill-current"></i><span class="text-xs font-bold text-slate-600 dark:text-slate-400">4.9 (128)</span></div>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 dark:text-white">₹1,499</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Canvas Weekender" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">Top Rated</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Canvas Weekender</h3>
+            <div class="flex items-center gap-1 text-amber-400 mb-3"><i data-lucide="star" class="w-3 h-3 fill-current"></i><span class="text-xs font-bold text-slate-600 dark:text-slate-400">4.8 (89)</span></div>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 dark:text-white">₹2,299</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/ecomarketbag" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">Customer Fav</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Eco Market Bag</h3>
+            <div class="flex items-center gap-1 text-amber-400 mb-3"><i data-lucide="star" class="w-3 h-3 fill-current"></i><span class="text-xs font-bold text-slate-600 dark:text-slate-400">5.0 (210)</span></div>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 dark:text-white">₹499</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Travel Tech Organizer1" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">Trending</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Travel Tech Organizer</h3>
+            <div class="flex items-center gap-1 text-amber-400 mb-3"><i data-lucide="star" class="w-3 h-3 fill-current"></i><span class="text-xs font-bold text-slate-600 dark:text-slate-400">4.7 (56)</span></div>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 dark:text-white">₹899</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="mb-12 text-center lg:text-left">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Bundle & Save</h2>
+        <p class="text-slate-500 font-medium mt-2">Curated sets designed to save you money.</p>
+    </div>
+
+  <!-- Responsive Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- Template: Bundle Card (Repeat for each item) -->
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl overflow-hidden">
+        
+        <!-- Image Container -->
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Everyday Essentials Set" alt="Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <!-- Save Badge -->
+            <div class="absolute top-3 left-3 bg-teal-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                Save 15%
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Everyday Essentials Set</h3>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 uppercase font-bold tracking-wider mb-4">Includes 3 best-sellers</p>
+            
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-lg text-teal-700 dark:text-teal-400">₹2,499</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors">
+                    Add Bundle
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bundle Card 2 -->
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl overflow-hidden">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Market Day Bundle" alt="Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-teal-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-lg">Save 20%</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Market Day Bundle</h3>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 uppercase font-bold tracking-wider mb-4">For your grocery runs</p>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-lg text-teal-700 dark:text-teal-400">₹1,299</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors">Add Bundle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bundle Card 3 -->
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl overflow-hidden">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Travel Companion Kit" alt="Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-teal-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-lg">Save 25%</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Travel Companion Kit</h3>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 uppercase font-bold tracking-wider mb-4">Ready for your next trip</p>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-lg text-teal-700 dark:text-teal-400">₹3,199</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors">Add Bundle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bundle Card 4 -->
+    <div class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl overflow-hidden">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Eco Gift Bundle" alt="Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-teal-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest shadow-lg">Save 10%</div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Eco Gift Bundle</h3>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 uppercase font-bold tracking-wider mb-4">Perfect for gifting</p>
+            <div class="flex items-center justify-between">
+                <span class="font-bold text-lg text-teal-700 dark:text-teal-400">₹1,899</span>
+                <button class="bg-slate-900 dark:bg-teal-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-teal-700 dark:hover:bg-teal-500 transition-colors">Add Bundle</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="bg-slate-900 rounded-[2.5rem] p-12 lg:p-20 text-white relative overflow-hidden">
+        
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="text-center mb-16 relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Collective Impact</h2>
+            <p class="text-slate-400 font-medium max-w-lg mx-auto">Every purchase contributes to a cleaner, greener future. Here is the progress we've made together.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
+            
+            <!-- Stat 1 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="shopping-bag" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">125k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Bags Replaced</div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="package" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">85k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Products Sold</div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="trash-2" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">40</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Waste Prevented</div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">15k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Members</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Simple Steps to Change</h2>
+        <p class="text-slate-500 font-medium mt-3">Making a difference has never been easier.</p>
+    </div>
+
+    <!-- 4-Step Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-teal-50 text-teal-700 rounded-3xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                <i data-lucide="shopping-cart" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-2">Choose Products</h4>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed max-w-[200px]">Select from our range of high-quality, eco-friendly essentials.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-teal-50 text-teal-700 rounded-3xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                <i data-lucide="truck" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-2">Plastic-Free Delivery</h4>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed max-w-[200px]">We ship your order using 100% compostable and plastic-free packaging.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-teal-50 text-teal-700 rounded-3xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                <i data-lucide="repeat" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-2">Reuse Every Day</h4>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed max-w-[200px]">Durable products built to last for thousands of daily uses and plastic-free packaging.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 bg-teal-50 text-teal-700 rounded-3xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                <i data-lucide="heart" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-2">Positive Impact</h4>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed max-w-[200px]">Join a movement that preserves the planet for generations to come.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">What Our Community Says</h2>
+
+    <!-- 4-Card Responsive Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Review Card 1 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/saraha" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Sarah J.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">The perfect everyday tote. Durable, stylish, and environmentally.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Signature Tote</div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/b1" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Mike R.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Finally, a bag that handles my daily commute and helps me ditch.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Market Bag</div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/elena" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">Elena V.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Love the quality. It feels premium and I get compliments everywhere.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Travel Organizer</div>
+        </div>
+
+        <!-- Review Card 4 -->
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+                <img src="assets/b2" alt="Customer" class="w-12 h-12 rounded-full">
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">David L.</h4>
+                    <div class="text-amber-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">Sustainable and beautiful. Highly recommend to any conscious.</p>
+            <div class="text-[10px] uppercase tracking-widest font-bold text-primary bg-primary/10 px-2 py-1 rounded w-max">Reusable Gift Bag</div>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Branding -->
+        <div class="lg:col-span-4 text-center lg:text-left">
+            <h2 class="text-4xl font-bold text-slate-900 mb-6 dark:text-white">Earn Green Points</h2>
+            <p class="text-slate-500 font-medium text-lg mb-8 leading-relaxed">
+                Every action you take helps the planet. Get rewarded for choosing sustainable living.
+            </p>
+            <button class="px-8 py-4 bg-teal-700 text-white rounded-2xl font-bold hover:bg-teal-800 transition-all shadow-lg shadow-teal-700/20">
+                Join for Free
+            </button>
+        </div>
+
+        <!-- Right: Perks Grid -->
+        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Perk 1 -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-teal-200 transition-colors">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="tag" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold text-lg text-slate-900 mb-2">Member Discounts</h4>
+                <p class="text-sm text-slate-500 font-medium leading-relaxed">Redeem your Green Points for exclusive store-wide savings.</p>
+            </div>
+
+            <!-- Perk 2 -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-teal-200 transition-colors">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="zap" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold text-lg text-slate-900 mb-2">Early Access</h4>
+                <p class="text-sm text-slate-500 font-medium leading-relaxed">Get first dibs on our new collections before they go public.</p>
+            </div>
+
+            <!-- Perk 3 -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-teal-200 transition-colors">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold text-lg text-slate-900 mb-2">Exclusive Launches</h4>
+                <p class="text-sm text-slate-500 font-medium leading-relaxed">Access limited edition products designed only for our members.</p>
+            </div>
+
+            <!-- Perk 4 -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-teal-200 transition-colors">
+                <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="gift" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold text-lg text-slate-900 mb-2">Birthday Rewards</h4>
+                <p class="text-sm text-slate-500 font-medium leading-relaxed">A special eco-friendly gift to celebrate your big day.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-7xl mx-auto px-4 py-24">
+    <div class="relative bg-teal-700 rounded-[3rem] p-12 lg:p-20 text-center overflow-hidden">
+        
+        <!-- Subtle Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-teal-600 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-teal-800 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+                Ready to Make Every Carry Count?
+            </h2>
+            <p class="text-teal-50 font-medium text-lg lg:text-xl mb-12">
+                Join our mission to reduce waste, one beautiful carry at a time. Browse our collection and find your perfect companion.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="shop.html" class="px-10 py-5 bg-white text-teal-700 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all active:scale-95 shadow-lg shadow-teal-900/20">
+                    Shop Tote Bags
+                </a>
+                <a href="categories.html" class="px-10 py-5 bg-teal-800 text-white rounded-2xl font-bold text-lg hover:bg-teal-900 transition-all active:scale-95 border border-teal-600">
+                    Explore Accessories
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+ <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+           <div>
+    <a href="index.html">
+        <div class="flex items-center gap-2 shrink-0">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+            <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+        </div>
+    </a>
+    <p class="text-slate-600 dark:text-slate-400 mt-2 mb-4">Crafting sustainable style for a conscious lifestyle.</p>
+    
+    <div class="flex gap-4">
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8A5.8,5.8 0 0,1 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 1,1 18.5,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7.01h-2.54v-2.9h2.54V9.78c0-2.5 1.49-3.89 3.76-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34v7.01c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6c-0.77,0.35-1.6,0.58-2.46,0.69c0.88-0.53,1.56-1.37,1.88-2.38c-0.83,0.5-1.75,0.85-2.72,1.05C18.37,4.5,17.26,4,16,4c-2.35,0-4.27,1.92-4.27,4.29c0,0.34,0.04,0.67,0.11,0.98C8.28,9.09,5.11,7.38,3,4.79c-0.37,0.63-0.58,1.37-0.58,2.15c0,1.49,0.75,2.81,1.91,3.56C3.71,10.5,3.09,10.32,2.5,10c0,0.02,0,0.03,0,0.05c0,2.08,1.48,3.82,3.44,4.22c-0.36,0.1-0.74,0.15-1.13,0.15c-0.28,0-0.55-0.03-0.81-0.08c0.55,1.71,2.14,2.95,4.03,2.98c-1.47,1.15-3.34,1.84-5.36,1.84c-0.35,0-0.69-0.02-1.03-0.06C4.47,20.18,6.65,21,9,21c7.2,0,11.13-5.96,11.13-11.13c0-0.17,0-0.34-0.01-0.51C20.96,7.61,21.78,6.86,22.46,6z" /></svg>
+        </a>
+    </div>
+</div>
+           <div>
+    <h3 class="font-bold mb-4">Quick Links</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a></li>
+        <li><a href="shop.html" class="hover:text-primary transition-colors">Shop</a></li>
+        <li><a href="categories.html" class="hover:text-primary transition-colors">Categories</a></li>
+        <li><a href="deals.html" class="hover:text-primary transition-colors">Deals</a></li>
+
+    </ul>
+</div>
+
+<div>
+    <h3 class="font-bold mb-4">Support & Info</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        <li><a href="shopnow.html" class="hover:text-primary transition-colors">Shop Now</a></li>
+        <li><a href="404.html" class="hover:text-primary transition-colors">404 Page</a></li>
+        <li><a href="comingsoon.html" class="hover:text-primary transition-colors">Coming Soon</a></li>
+    </ul>
+</div>
+            <div>
+                <h3 class="font-bold mb-4">Newsletter</h3>
+                <input type="email" placeholder="Email address" class="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent mb-2">
+                <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

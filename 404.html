@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/></svg>">
+    <title>404 - Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#0d9488' } } }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <a href="index.html" class="flex items-center gap-2">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" /></svg>
+            <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+        </a>
+        <div class="flex gap-3">
+            <button id="themeToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button id="rtlToggle" 
+        class="w-10 h-10 rounded-lg border 
+               border-slate-300 dark:border-slate-600 
+               text-slate-800 dark:text-slate-100 
+               flex items-center justify-center transition-all 
+               hover:bg-slate-100 dark:hover:bg-slate-700 
+               text-xs font-bold uppercase">
+    LTR
+</button>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-6 text-center">
+        <div class="max-w-lg">
+            <h1 class="text-9xl font-bold text-primary mb-6">404</h1>
+            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white mb-4">Page Not Found</h2>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 font-medium">Sorry, the page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="index.html" class="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-700 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                Back to Homepage
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Shared Logic for Theme and RTL
+        const htmlElement = document.documentElement;
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        if(localStorage.theme === 'dark') { htmlElement.classList.add('dark'); themeIcon.innerText = '☀️'; }
+        themeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+            themeIcon.innerText = isDark ? '☀️' : '🌙';
+        });
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtlToggle');
+        if(localStorage.dir) { htmlElement.dir = localStorage.dir; rtlToggle.innerText = localStorage.dir.toUpperCase(); }
+        rtlToggle.addEventListener('click', () => {
+            const newDir = htmlElement.dir === 'rtl' ? 'ltr' : 'rtl';
+            htmlElement.dir = newDir;
+            localStorage.dir = newDir;
+            rtlToggle.innerText = newDir.toUpperCase();
+        });
+    </script>
+</body>
+</html>

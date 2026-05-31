@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/></svg>">
+    <title>Sign Up - EcoTote</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#0d9488' } } }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" /></svg>
+            <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+        </a>
+        <div class="flex gap-3">
+            <button id="themeToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button id="rtlToggle" 
+        class="w-10 h-10 rounded-lg border 
+               border-slate-300 dark:border-slate-600 
+               text-slate-800 dark:text-slate-100 
+               flex items-center justify-center transition-all 
+               hover:bg-slate-100 dark:hover:bg-slate-700 
+               text-xs font-bold uppercase">
+    LTR
+</button>
+        </div>
+    </nav>
+
+   <main class="flex items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Wholesale Registration</h2>
+                <p class="text-slate-500 mt-2">Join our partner network today.</p>
+            </div>
+            
+            <form class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium mb-1 dark:text-slate-300">Company Name</label>
+                    <input type="text" placeholder="Enter business name" class="w-full p-4 rounded-xl border border-slate-200 dark:bg-slate-800 dark:border-slate-700 outline-none focus:ring-2 focus:ring-primary/50">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 dark:text-slate-300">GST Number</label>
+                    <input type="text" placeholder="00AAAAA0000A1Z5" class="w-full p-4 rounded-xl border border-slate-200 dark:bg-slate-800 dark:border-slate-700 outline-none focus:ring-2 focus:ring-primary/50">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 dark:text-slate-300">Trade License Document</label>
+                    <div class="w-full p-4 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl text-center hover:border-primary transition-colors cursor-pointer group">
+                        <input type="file" class="hidden" id="licenseUpload">
+                        <label for="licenseUpload" class="cursor-pointer">
+                            <i data-lucide="upload-cloud" class="w-8 h-8 text-slate-400 mx-auto mb-2 group-hover:text-primary"></i>
+                            <span class="text-sm text-slate-500">Upload PDF/Image (Max 5MB)</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-teal-700 transition-all">Submit Application</button>
+            </form>
+
+            <p class="text-center text-sm text-slate-600 dark:text-slate-400 mt-6">
+                Already registered? <a href="login.html" class="text-primary font-bold hover:underline">Sign in</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const htmlElement = document.documentElement;
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        if(localStorage.theme === 'dark') { htmlElement.classList.add('dark'); themeIcon.innerText = '☀️'; }
+        themeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+            themeIcon.innerText = isDark ? '☀️' : '🌙';
+        });
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtlToggle');
+        if(localStorage.dir) { htmlElement.dir = localStorage.dir; rtlToggle.innerText = localStorage.dir.toUpperCase(); }
+        rtlToggle.addEventListener('click', () => {
+            const newDir = htmlElement.dir === 'rtl' ? 'ltr' : 'rtl';
+            htmlElement.dir = newDir;
+            localStorage.dir = newDir;
+            rtlToggle.innerText = newDir.toUpperCase();
+        });
+
+        // Password Toggle
+        function togglePassword() {
+            const p = document.getElementById('password');
+            const eye = document.getElementById('eyeIcon');
+            p.type = p.type === 'password' ? 'text' : 'password';
+            eye.setAttribute('data-lucide', p.type === 'password' ? 'eye' : 'eye-off');
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,805 @@
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z'/></svg>">
+    <title>EcoTote | Sustainable Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#0d9488' } } } // Ocean Teal
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300 text-slate-800 dark:text-slate-100">
+
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo -->
+             <a href="index.html">
+                <div class="flex items-center gap-2 shrink-0">
+                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                </svg>
+                <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+            </div>
+             </a>
+            
+
+<div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
+    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    
+    <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+        
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+            Dashboard
+            <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
+        </button>
+
+        <div x-show="open"
+             x-cloak
+             x-transition
+             class="bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 rounded-lg w-40 z-[999]
+                    lg:absolute lg:top-full lg:right-0 lg:mt-2
+                    block pl-4 py-2 lg:p-2">
+            
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                User
+            </a>
+        </div>
+    </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+    [x-cloak] { display: none !important; }
+</style>
+
+            <!-- Desktop Controls -->
+            <div class="hidden lg:flex items-center space-x-3 shrink-0">
+                <button id="themeToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
+                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
+                <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl p-2 z-50">☰</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
+        <a href="index.html" class="block py-2">Home</a>
+        <a href="home2.html" class="block py-2">Home2</a>
+         <a href="aboutus.html" class="block py-2">Aboutus</a>
+        <a href="shop.html" class="block py-2">Shop</a>
+        <a href="categories.html" class="block py-2">Categories</a>
+        <a href="deals.html" class="block py-2">Deals</a>
+        <a href="blog.html" class="block py-2">Blog</a>
+        <a href="contact.html" class="block py-2">Contact</a>
+       <div class="border-t border-slate-200 dark:border-slate-800 pt-2">
+        <button id="mobileDashBtn" class="w-full text-left font-bold py-2 flex justify-between items-center">
+            Dashboard <span>▼</span>
+        </button>
+        <div id="mobileDashContent" class="hidden pl-4 space-y-2">
+            <a href="user.html" class="block py-1 hover:text-primary">User</a>
+        </div>
+    </div>
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
+    
+    <div class="flex gap-3">
+        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
+            Shop Now
+        </a>
+        <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
+            Login
+        </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 py-2 border-t border-slate-200 dark:border-slate-800">
+        
+        <button id="mobileThemeToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800">
+            <span id="mobileThemeIcon">🌙</span>
+        </button>
+
+        <button id="mobileRtlToggle" class="h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">
+            LTR
+        </button>
+        
+    </div>
+</div>
+    </div>
+</nav>
+
+<script>
+    // Automatic Active Link Highlight
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    // Get the filename from the link href
+    const linkPath = link.getAttribute('href');
+    
+    // Check if the current page matches the link
+    if (linkPath === currentPath) {
+        link.classList.add('text-primary', 'font-bold');
+        // If it's a sub-menu item, also bold the parent Dashboard link
+        if (link.closest('#mobileDashContent')) {
+            document.getElementById('mobileDashBtn').classList.add('text-primary');
+        }
+    }
+});
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+    const htmlElement = document.documentElement;
+
+    // 1. Initial State: Check localStorage on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        mobileThemeIcon.innerText = '☀️';
+    } else {
+        htmlElement.classList.remove('dark');
+        mobileThemeIcon.innerText = '🌙';
+    }
+
+    // 2. Click Interaction: Toggle and Save
+    mobileThemeToggle.addEventListener('click', () => {
+        const isDark = htmlElement.classList.toggle('dark');
+        
+        // Update Icon
+        mobileThemeIcon.innerText = isDark ? '☀️' : '🌙';
+        
+        // Save to LocalStorage
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    // Mobile LTR/RTL Toggle Logic
+const mobileRtlToggle = document.getElementById('mobileRtlToggle');
+
+// Load saved direction
+if (localStorage.dir) {
+    document.documentElement.dir = localStorage.dir;
+    mobileRtlToggle.innerText = localStorage.dir;
+}
+
+mobileRtlToggle.addEventListener('click', () => {
+    const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.dir = newDir;
+    localStorage.dir = newDir;
+    
+    // Update button text
+    mobileRtlToggle.innerText = newDir.toUpperCase();
+    
+    // Sync with any potential desktop LTR button
+    const desktopRtl = document.getElementById('rtlToggle');
+    if (desktopRtl) desktopRtl.innerText = newDir.toUpperCase();
+});
+    // Mobile Dashboard Dropdown Logic
+const mobileDashBtn = document.getElementById('mobileDashBtn');
+const mobileDashContent = document.getElementById('mobileDashContent');
+
+mobileDashBtn.addEventListener('click', () => {
+    mobileDashContent.classList.toggle('hidden');
+    // Optional: Rotate the arrow icon
+    const arrow = mobileDashBtn.querySelector('span');
+    arrow.innerText = mobileDashContent.classList.contains('hidden') ? '▼' : '▲';
+});
+    // Theme & RTL Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const rtlToggle = document.getElementById('rtlToggle');
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.theme = isDark ? 'dark' : 'light';
+        themeIcon.innerText = isDark ? '☀️' : '🌙';
+    });
+
+    rtlToggle.addEventListener('click', () => {
+        const dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+        document.documentElement.dir = dir;
+        localStorage.dir = dir;
+        rtlToggle.innerText = dir.toUpperCase();
+    });
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.innerText = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+    });
+</script>
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        <!-- Left: Text Content & Countdown -->
+        <div class="flex-1 text-center lg:text-left">
+            <span class="inline-block py-1 px-3 mb-4 rounded-full bg-teal-100 text-teal-700 font-bold text-xs uppercase tracking-widest">Limited Time Sale</span>
+            <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 leading-[1.1] dark:text-white">
+                Eco-Friendly Savings You’ll Love
+            </h1>
+            <p class="text-lg lg:text-xl text-slate-500 font-medium mb-10 max-w-xl mx-auto lg:mx-0">
+                Shop sustainable tote bags and accessories at special prices while supporting a greener future.
+            </p>
+            
+            <!-- Countdown Timer -->
+            <div class="flex gap-4 justify-center lg:justify-start mb-10">
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-bold text-teal-700">03</span>
+                    <span class="text-xs font-bold text-slate-400 uppercase">Days</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-bold text-teal-700">12</span>
+                    <span class="text-xs font-bold text-slate-400 uppercase">Hours</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-bold text-teal-700">45</span>
+                    <span class="text-xs font-bold text-slate-400 uppercase">Minutes</span>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="shop.html" class="bg-teal-700 text-white px-10 py-4 rounded-xl font-semibold hover:bg-teal-800 transition-all shadow-lg shadow-teal-700/20">
+                    Shop Deals
+                </a>
+                <a href="categories.html" class="border border-slate-200 text-slate-900 px-10 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all dark:text-white">
+                    View Categories
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: Hero Image -->
+        <div class="flex-1 w-full">
+            <div class="relative w-full aspect-[4/5] lg:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl">
+                <img src="assets/Sustainable Eco Deals1" 
+                     alt="Sustainable Eco Deals" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="relative group bg-slate-900 rounded-[2rem] p-8 lg:p-16 overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-teal-700/20">
+        
+        <!-- Decorative Glow -->
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-700/20 rounded-full blur-3xl group-hover:bg-teal-700/40 transition-all duration-500"></div>
+
+        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            
+            <!-- Deal Header -->
+            <div class="flex-1 text-center lg:text-left">
+                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">Limited Time Offer</span>
+                <h2 class="text-4xl lg:text-6xl font-bold text-white mb-4">Buy More, Save More</h2>
+                <p class="text-slate-400 font-medium text-lg">Build your sustainable collection and enjoy tiered rewards on every order.</p>
+            </div>
+
+            <!-- Tiered Deals -->
+            <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <span class="text-2xl font-bold text-white block mb-1">10%</span>
+                    <span class="text-slate-400 font-medium text-sm">Buy 2 Items</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                    <span class="text-2xl font-bold text-white block mb-1">15%</span>
+                    <span class="text-slate-400 font-medium text-sm">Buy 3 Items</span>
+                </div>
+                <div class="bg-teal-700 border border-teal-600 rounded-2xl p-6 text-center shadow-lg shadow-teal-900/50">
+                    <span class="text-2xl font-bold text-white block mb-1">20%</span>
+                    <span class="text-teal-100 font-medium text-sm">Buy 5+ Items</span>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="flex-none">
+                <a href="#" class="inline-block px-10 py-5 bg-white text-slate-900 rounded-2xl font-bold text-lg hover:bg-teal-50 transition-all active:scale-95 shadow-xl">
+                    Start Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-end justify-between mb-10">
+        <div>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Flash Deals</h2>
+            <p class="text-slate-500 font-medium mt-2">Limited-time savings, grab them before they're gone!</p>
+        </div>
+    </div>
+
+    <!-- Grid -->
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- Product 1: Everyday Eco Tote -->
+    <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-900">
+            <img src="assets/Everyday Eco Tote" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <span class="bg-red-600 text-white px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Flash Sale</span>
+                <span class="bg-black/80 backdrop-blur text-white px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Limited Time</span>
+            </div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Everyday Eco Tote</h3>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-xl font-bold text-teal-700 dark:text-teal-400">$29.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$49.00</span>
+                <span class="bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase">-40%</span>
+            </div>
+            <div class="mb-4">
+                <div class="flex justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1"><span>Only 4 left</span><span>Stock</span></div>
+                <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden"><div class="w-1/4 h-full bg-red-600 rounded-full"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 2: Foldable Shopper -->
+    <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-900">
+            <img src="assets/Foldable Shopper" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-teal-700 text-white px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Favorite</span></div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Foldable Shopper</h3>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-xl font-bold text-teal-700 dark:text-teal-400">$15.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$25.00</span>
+                <span class="bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase">-40%</span>
+            </div>
+            <div class="mb-4">
+                <div class="flex justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1"><span>Only 2 left</span><span>Stock</span></div>
+                <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden"><div class="w-[10%] h-full bg-red-600 rounded-full"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 3: Carry Pouch -->
+    <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-900">
+            <img src="assets/Carry Pouch" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-red-600 text-white px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Flash Sale</span></div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Carry Pouch</h3>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-xl font-bold text-teal-700 dark:text-teal-400">$12.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$18.00</span>
+                <span class="bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase">-33%</span>
+            </div>
+            <div class="mb-4">
+                <div class="flex justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1"><span>Only 8 left</span><span>Stock</span></div>
+                <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden"><div class="w-1/2 h-full bg-red-600 rounded-full"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 4: Work Satchel -->
+    <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-3 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-sm hover:shadow-xl">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-900">
+            <img src="assets/Work Satchel" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-teal-700 text-white px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">Favorite</span></div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Work Satchel</h3>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-xl font-bold text-teal-700 dark:text-teal-400">$59.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$85.00</span>
+                <span class="bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase">-30%</span>
+            </div>
+            <div class="mb-4">
+                <div class="flex justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1"><span>Only 3 left</span><span>Stock</span></div>
+                <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden"><div class="w-1/3 h-full bg-red-600 rounded-full"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="mb-10 text-center lg:text-left">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Clearance Corner</h2>
+        <p class="text-slate-500 font-medium mt-2">Final pieces from collections we're saying goodbye to.</p>
+    </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- Card 1: Classic Hemp Tote -->
+    <div class="group bg-slate-50 dark:bg-slate-800 rounded-3xl p-3 border border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200 dark:bg-slate-900">
+            <img src="assets/Classic Hemp Tote" alt="Classic Hemp Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Last Chance</span>
+                <span class="bg-red-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">50% Off</span>
+            </div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Classic Hemp Tote</h3>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-lg font-bold text-slate-900 dark:text-white">$24.50</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$49.00</span>
+            </div>
+            <div class="flex items-center gap-2 text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-2 rounded-lg">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wider">Only 2 in stock</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Canvas Organizer -->
+    <div class="group bg-slate-50 dark:bg-slate-800 rounded-3xl p-3 border border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200 dark:bg-slate-900">
+            <img src="assets/Canvas Weekender"Canvas Organizer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Last Chance</span>
+                <span class="bg-red-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">60% Off</span>
+            </div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Canvas Organizer</h3>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-lg font-bold text-slate-900 dark:text-white">$12.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$30.00</span>
+            </div>
+            <div class="flex items-center gap-2 text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-2 rounded-lg">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wider">Only 1 in stock</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: Eco Travel Kit -->
+    <div class="group bg-slate-50 dark:bg-slate-800 rounded-3xl p-3 border border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200 dark:bg-slate-900">
+            <img src="assets/Travel Accessories" alt="Eco Travel Kit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Last Chance</span>
+                <span class="bg-red-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">40% Off</span>
+            </div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Eco Travel Kit</h3>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-lg font-bold text-slate-900 dark:text-white">$35.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$58.00</span>
+            </div>
+            <div class="flex items-center gap-2 text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-2 rounded-lg">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wider">Only 4 in stock</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4: Work Satchel -->
+    <div class="group bg-slate-50 dark:bg-slate-800 rounded-3xl p-3 border border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200 dark:bg-slate-900">
+            <img src="assets/Autumn Earth Tone" alt="Work Satchel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Last Chance</span>
+                <span class="bg-red-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">30% Off</span>
+            </div>
+        </div>
+        <div class="px-2">
+            <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Work Satchel</h3>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-lg font-bold text-slate-900 dark:text-white">$59.00</span>
+                <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$85.00</span>
+            </div>
+            <div class="flex items-center gap-2 text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-2 rounded-lg">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wider">Only 3 in stock</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<script>lucide.createIcons();</script>
+<section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="bg-slate-900 rounded-[2.5rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 border border-slate-800 shadow-2xl">
+        
+        <!-- Offer 1 -->
+        <div class="flex items-center gap-6 text-white w-full lg:w-auto">
+            <div class="flex-shrink-0 w-20 h-20 bg-teal-700/20 text-teal-400 rounded-3xl flex items-center justify-center">
+                <i data-lucide="truck" class="w-10 h-10"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-xl mb-1">Free Ship</h4>
+                <p class="text-sm text-slate-400 font-medium uppercase tracking-widest">Orders above ₹999</p>
+            </div>
+        </div>
+
+        <!-- Divider (Visible on desktop) -->
+        <div class="hidden lg:block w-px h-20 bg-slate-800"></div>
+
+        <!-- Offer 2 -->
+        <div class="flex items-center gap-6 text-white w-full lg:w-auto">
+            <div class="flex-shrink-0 w-20 h-20 bg-teal-700/20 text-teal-400 rounded-3xl flex items-center justify-center">
+                <i data-lucide="gift" class="w-10 h-10"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-xl mb-1">Gift Wrap</h4>
+                <p class="text-sm text-slate-400 font-medium uppercase tracking-widest">On bundle purchases</p>
+            </div>
+        </div>
+
+        <!-- Divider (Visible on desktop) -->
+        <div class="hidden lg:block w-px h-20 bg-slate-800"></div>
+
+        <!-- Offer 3 -->
+        <div class="flex items-center gap-6 text-white w-full lg:w-auto">
+            <div class="flex-shrink-0 w-20 h-20 bg-teal-700/20 text-teal-400 rounded-3xl flex items-center justify-center">
+                <i data-lucide="shopping-bag" class="w-10 h-10"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-xl mb-1"> Pouch</h4>
+                <p class="text-sm text-slate-400 font-medium uppercase tracking-widest">Orders over ₹1,499</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Shop by Budget</h2>
+        <p class="text-slate-500 font-medium mt-2">Find your next favorite item at a price you'll love.</p>
+    </div>
+
+    <!-- Budget Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        
+        <!-- Budget Tile -->
+        <a href="#" class="group relative aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+            <img src="assets/Classic Hemp Tote" alt="Budget" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity">
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <span class="text-white/80 font-medium text-sm mb-1 uppercase tracking-wider">Under</span>
+                <span class="text-2xl lg:text-3xl font-bold text-white">₹499</span>
+            </div>
+        </a>
+
+        <!-- Budget Tile -->
+        <a href="#" class="group relative aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+            <img src="assets/beach Trips" alt="Budget" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity">
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <span class="text-white/80 font-medium text-sm mb-1 uppercase tracking-wider">Under</span>
+                <span class="text-2xl lg:text-3xl font-bold text-white">₹999</span>
+            </div>
+        </a>
+
+        <!-- Budget Tile -->
+        <a href="#" class="group relative aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+            <img src="assets/Tote" alt="Budget" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity">
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <span class="text-white/80 font-medium text-sm mb-1 uppercase tracking-wider">Under</span>
+                <span class="text-2xl lg:text-3xl font-bold text-white">₹1,499</span>
+            </div>
+        </a>
+
+        <!-- Budget Tile -->
+        <a href="#" class="group relative aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+            <img src="assets/Thoughtful Craftsmanship" alt="Budget" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity">
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <span class="text-white/80 font-medium text-sm mb-1 uppercase tracking-wider">Under</span>
+                <span class="text-2xl lg:text-3xl font-bold text-white">₹2,499</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="bg-teal-700 rounded-[2.5rem] p-10 lg:p-20 text-white overflow-hidden relative">
+        
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+        <div class="text-center mb-12 relative z-10">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-4">Your Positive Impact</h2>
+            <p class="text-teal-100 font-medium text-lg">See the difference you make with every purchase.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            
+            <!-- Stat 1: Money Saved -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-3xl text-center hover:bg-white/15 transition-all">
+                <div class="w-16 h-16 bg-white text-teal-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="wallet" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-teal-100 font-bold uppercase tracking-widest text-sm mb-2">Money Saved</h4>
+                <p class="text-4xl lg:text-5xl font-bold">₹1,250</p>
+                <p class="text-teal-200 text-sm font-medium mt-2">vs. disposable </p>
+            </div>
+
+            <!-- Stat 2: Plastic Saved -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-3xl text-center hover:bg-white/15 transition-all">
+                <div class="w-16 h-16 bg-white text-teal-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="trash-2" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-teal-100 font-bold uppercase tracking-widest text-sm mb-2">Plastic Saved</h4>
+                <p class="text-4xl lg:text-5xl font-bold">4.2kg</p>
+                <p class="text-teal-200 text-sm font-medium mt-2">kept out of landfills</p>
+            </div>
+
+            <!-- Stat 3: Bags Avoided -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-3xl text-center hover:bg-white/15 transition-all">
+                <div class="w-16 h-16 bg-white text-teal-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-teal-100 font-bold uppercase tracking-widest text-sm mb-2">Bags Avoided</h4>
+                <p class="text-4xl lg:text-5xl font-bold">150+</p>
+                <p class="text-teal-200 text-sm font-medium mt-2">single-use bags</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+<section class="max-w-3xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Promotions & Deals</h2>
+        <p class="text-slate-500 font-medium mt-3">Everything you need to know about our current offers.</p>
+    </div>
+
+    <div class="space-y-4">
+        <!-- FAQ 1: Combination -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="w-full p-6 text-left flex justify-between items-center font-semibold text-slate-900 transition-colors hover:text-teal-700" onclick="toggleFAQ(this)">
+                Can deals be combined?
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+                Most promotional codes cannot be combined with other ongoing offers or tiered discounts. Only one discount code may be applied per order.
+            </div>
+        </div>
+
+        <!-- FAQ 2: Duration -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="w-full p-6 text-left flex justify-between items-center font-semibold text-slate-900 transition-colors hover:text-teal-700" onclick="toggleFAQ(this)">
+                How long do promotions last?
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+                Promotion timelines vary by event. Each sale is clearly marked with an end date, or a countdown timer is provided on the hero banner for urgent deals.
+            </div>
+        </div>
+
+        <!-- FAQ 3: Returns -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="w-full p-6 text-left flex justify-between items-center font-semibold text-slate-900 transition-colors hover:text-teal-700" onclick="toggleFAQ(this)">
+                Are sale items returnable?
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+                Items marked as "Final Sale" are non-returnable. Standard sale items can be returned within 30 days, provided they are in their original packaging.
+            </div>
+        </div>
+
+        <!-- FAQ 4: Bundles -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="w-full p-6 text-left flex justify-between items-center font-semibold text-slate-900 transition-colors hover:text-teal-700" onclick="toggleFAQ(this)">
+                Do bundle discounts apply automatically?
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+                Yes! Bundle discounts are applied automatically at checkout when the required quantity of items is added to your cart—no code necessary.
+            </div>
+        </div>
+
+        <!-- FAQ 5: Rewards -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="w-full p-6 text-left flex justify-between items-center font-semibold text-slate-900 transition-colors hover:text-teal-700" onclick="toggleFAQ(this)">
+                How do reward points work?
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-slate-600 font-medium leading-relaxed">
+                For every ₹100 spent, you earn 10 points. Points can be redeemed at checkout for store credit, discounts, or exclusive free gifts.
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFAQ(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        // Toggle current
+        const isHidden = content.classList.contains('hidden');
+        
+        // Hide all others
+        document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('i').forEach(el => el.style.transform = 'rotate(0deg)');
+        
+        // Show current if it was hidden
+        if (isHidden) {
+            content.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+    lucide.createIcons();
+</script>
+
+ <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+           <div>
+    <a href="index.html">
+        <div class="flex items-center gap-2 shrink-0">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg>
+            <span class="text-xl lg:text-2xl font-bold text-primary tracking-tight">EcoTote</span>
+        </div>
+    </a>
+    <p class="text-slate-600 dark:text-slate-400 mt-2 mb-4">Crafting sustainable style for a conscious lifestyle.</p>
+    
+    <div class="flex gap-4">
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8A5.8,5.8 0 0,1 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 1,1 18.5,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7.01h-2.54v-2.9h2.54V9.78c0-2.5 1.49-3.89 3.76-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34v7.01c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02z" /></svg>
+        </a>
+        <a href="#" class="text-slate-500 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6c-0.77,0.35-1.6,0.58-2.46,0.69c0.88-0.53,1.56-1.37,1.88-2.38c-0.83,0.5-1.75,0.85-2.72,1.05C18.37,4.5,17.26,4,16,4c-2.35,0-4.27,1.92-4.27,4.29c0,0.34,0.04,0.67,0.11,0.98C8.28,9.09,5.11,7.38,3,4.79c-0.37,0.63-0.58,1.37-0.58,2.15c0,1.49,0.75,2.81,1.91,3.56C3.71,10.5,3.09,10.32,2.5,10c0,0.02,0,0.03,0,0.05c0,2.08,1.48,3.82,3.44,4.22c-0.36,0.1-0.74,0.15-1.13,0.15c-0.28,0-0.55-0.03-0.81-0.08c0.55,1.71,2.14,2.95,4.03,2.98c-1.47,1.15-3.34,1.84-5.36,1.84c-0.35,0-0.69-0.02-1.03-0.06C4.47,20.18,6.65,21,9,21c7.2,0,11.13-5.96,11.13-11.13c0-0.17,0-0.34-0.01-0.51C20.96,7.61,21.78,6.86,22.46,6z" /></svg>
+        </a>
+    </div>
+</div>
+           <div>
+    <h3 class="font-bold mb-4">Quick Links</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a></li>
+        <li><a href="shop.html" class="hover:text-primary transition-colors">Shop</a></li>
+        <li><a href="categories.html" class="hover:text-primary transition-colors">Categories</a></li>
+        <li><a href="deals.html" class="hover:text-primary transition-colors">Deals</a></li>
+
+    </ul>
+</div>
+
+<div>
+    <h3 class="font-bold mb-4">Support & Info</h3>
+    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        <li><a href="shopnow.html" class="hover:text-primary transition-colors">Shop Now</a></li>
+        <li><a href="404.html" class="hover:text-primary transition-colors">404 Page</a></li>
+        <li><a href="comingsoon.html" class="hover:text-primary transition-colors">Coming Soon</a></li>
+    </ul>
+</div>
+            <div>
+                <h3 class="font-bold mb-4">Newsletter</h3>
+                <input type="email" placeholder="Email address" class="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent mb-2">
+                <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
