@@ -19,7 +19,7 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300 text-slate-800 dark:text-slate-100">
 
-  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+   <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20 items-center">
             
@@ -35,18 +35,18 @@
             
 
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
-    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
-    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
-    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
-    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
-    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
-    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
-    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Contact</a>
     
     <div class="relative" x-data="{ open: false }" @click.outside="open = false">
         
-        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
             Dashboard
             <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
         </button>
@@ -58,7 +58,7 @@
                     lg:absolute lg:top-full lg:right-0 lg:mt-2
                     block pl-4 py-2 lg:p-2">
             
-            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
                 User
             </a>
         </div>
@@ -76,7 +76,6 @@
                     <span id="themeIcon">🌙</span>
                 </button>
                 <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
-                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
                 <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
             </div>
 
@@ -106,9 +105,7 @@
         <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
     
     <div class="flex gap-3">
-        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
-            Shop Now
-        </a>
+       
         <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
             Login
         </a>
@@ -485,7 +482,7 @@ mobileDashBtn.addEventListener('click', () => {
         </div>
     </div>
 </section>
-  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+ <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
            <div>
     <a href="index.html">
@@ -538,6 +535,19 @@ mobileDashBtn.addEventListener('click', () => {
                 <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
             </div>
         </div>
+        <div class="max-w-7xl mx-auto px-6 text-center pt-8 border-t border-slate-200 dark:border-slate-800">
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            &copy; <span id="year"></span> <span class="font-bold text-slate-900 dark:text-white">EcoTote</span>. All rights reserved.
+        </p>
+        <p class="text-slate-400 dark:text-slate-600 text-xs mt-2">
+            Crafted for a sustainable future.
+        </p>
+    </div>
+    <script>
+        // Set the current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    </script>
     </footer>
 
     

@@ -35,18 +35,18 @@
             
 
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
-    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
-    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
-    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
-    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
-    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
-    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
-    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Contact</a>
     
     <div class="relative" x-data="{ open: false }" @click.outside="open = false">
         
-        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
             Dashboard
             <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
         </button>
@@ -58,7 +58,7 @@
                     lg:absolute lg:top-full lg:right-0 lg:mt-2
                     block pl-4 py-2 lg:p-2">
             
-            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
                 User
             </a>
         </div>
@@ -76,7 +76,6 @@
                     <span id="themeIcon">🌙</span>
                 </button>
                 <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
-                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
                 <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
             </div>
 
@@ -106,9 +105,7 @@
         <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
     
     <div class="flex gap-3">
-        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
-            Shop Now
-        </a>
+       
         <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
             Login
         </a>
@@ -330,115 +327,128 @@ mobileDashBtn.addEventListener('click', () => {
     </div>
 </section>
 <nav class="max-w-7xl mx-auto px-4 py-6">
-    <div class="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-900 text-white font-semibold text-sm">New Arrivals</a>
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 transition-colors">Best Sellers</a>
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 transition-colors">Eco Essentials</a>
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 transition-colors">Travel</a>
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 transition-colors">Limited Edition</a>
-        <a href="#" class="whitespace-nowrap px-6 py-2.5 rounded-full bg-red-50 text-red-600 font-semibold text-sm hover:bg-red-100 transition-colors">Sale Items</a>
+    <!-- Container with a custom-styled scrollbar -->
+    <div class="flex items-center gap-3 overflow-x-auto pb-4 custom-scrollbar snap-x">
+        
+        <!-- Active Link -->
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-teal-700 dark:bg-teal-600 text-white font-semibold text-sm shadow-md shadow-teal-700/20">
+            New Arrivals
+        </a>
+
+        <!-- Normal Links -->
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Best Sellers</a>
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Eco Essentials</a>
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Travel</a>
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Limited Edition</a>
+        <a href="#" class="snap-center whitespace-nowrap px-6 py-2.5 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-semibold text-sm hover:bg-red-100 dark:hover:bg-red-900/40 transition-all">Sale Items</a>
     </div>
 </nav>
+
+<style>
+    /* Styling the track */
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 6px;
+    }
+    /* Styling the handle */
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1; /* slate-300 */
+        border-radius: 10px;
+    }
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #475569; /* slate-600 */
+    }
+    /* Hover effect on handle */
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #94a3b8; /* slate-400 */
+    }
+</style>
 <section class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-        
-        <!-- Product Data Array Simulation -->
-        <!-- Card 1 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/Tote" alt="Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Organic</span></div>
-                <a href="totebags.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Everyday Tote</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.8</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$49.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 py-8">
+    
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Tote" alt="Everyday Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Organic</span></div>
+            <a href="totebags.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
         </div>
-
-        <!-- Card 2 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/Foldable Shopper" alt="Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Recycled</span></div>
-                <a href="Foldable Shoppe.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Foldable Shopper</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.9</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$25.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/Eco Pouch" alt="Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Hemp</span></div>
-<a href="pouches.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Carry Pouch</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.7</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$18.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/Work Satchel" alt="Work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Canvas</span></div>
-                <a href="Work Satchel.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Work Satchel</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.9</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$85.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/Gift Bag" alt="Gift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Limited</span></div>
-                <a href="gift.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Gift Bundle</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 5.0</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$120.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
-                <img src="assets/beach Trips" alt="Beach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary">Eco</span></div>
-                <a href="Beach Duffle.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 text-center text-slate-900 dark:text-white">
-    Quick View
-</a>
-            </div>
-            <div class="px-2">
-                <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-slate-900 dark:text-white">Beach Duffle</h3><button class="text-slate-400 hover:text-red-500 transition-colors"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
-                <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-sm"><i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.6</span><i data-lucide="leaf" class="w-4 h-4 text-green-500"></i></div>
-                <div class="flex justify-between items-center"><span class="font-bold text-lg">$65.00</span><button class="bg-primary text-white p-3 rounded-xl hover:bg-teal-700 transition-colors"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button></div>
-            </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Everyday Tote</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">Handcrafted organic cotton, perfect for daily errands.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 4.8</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$49.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
         </div>
     </div>
+
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Foldable Shopper" alt="Foldable Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Recycled</span></div>
+            <a href="Foldable Shoppe.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
+        </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Foldable Shopper</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">Lightweight and durable, folds down to fit anywhere.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 4.9</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$25.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Eco Pouch" alt="Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Hemp</span></div>
+            <a href="pouches.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
+        </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Carry Pouch</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">Small hemp pouch to organize your daily essentials.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 4.7</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$18.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Work Satchel" alt="Satchel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Canvas</span></div>
+            <a href="Work Satchel.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
+        </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Work Satchel</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">Premium canvas bag with extra padding for laptops.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 4.9</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$85.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/Gift Bag" alt="Gift Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Limited</span></div>
+            <a href="gift.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
+        </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Gift Bundle</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">The ultimate curated sustainable gift set.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 5.0</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$120.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="relative aspect-square rounded-2xl overflow-hidden mb-4">
+            <img src="assets/beach Trips" alt="Duffle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3"><span class="bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-teal-700">Eco</span></div>
+            <a href="Beach Duffle.html" class="absolute bottom-3 left-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-all text-center text-slate-900 dark:text-white text-sm">Quick View</a>
+        </div>
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-1"><h3 class="font-bold text-slate-900 dark:text-white">Beach Duffle</h3><button class="text-slate-400 hover:text-red-500"><i data-lucide="heart" class="w-5 h-5"></i></button></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-2">Spacious, waterproof duffle for all-day beach trips.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="flex items-center text-amber-400 text-xs font-bold"><i data-lucide="star" class="w-3 h-3 fill-current mr-1"></i> 4.6</span><i data-lucide="leaf" class="w-3 h-3 text-green-500"></i></div>
+            <div class="flex justify-between items-center"><span class="font-bold text-lg text-slate-900 dark:text-white">$65.00</span><button class="bg-teal-700 text-white p-3 rounded-xl hover:bg-teal-800 transition-colors"><i data-lucide="shopping-cart" class="w-4 h-4"></i></button></div>
+        </div>
+    </div>
+</div>
 </section>
 
 <script>lucide.createIcons();</script>
@@ -450,54 +460,59 @@ mobileDashBtn.addEventListener('click', () => {
         </div>
     </div>
 
-    <!-- Horizontal Scroll Container -->
-    <div class="flex gap-6 overflow-x-auto pb-8 snap-x scrollbar-hide">
+    <div class="flex gap-6 overflow-x-auto pb-8 snap-x custom-scrollbar">
         
-        <!-- Product Card 1 -->
-        <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
+        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Urban Minimal Tote" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Urban Minimal Tote" alt="Midnight Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Midnight Tote</h3>
-            <p class="text-slate-500 text-sm font-medium">Latest Design</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Latest Design</p>
         </a>
 
-        <!-- Product Card 2 -->
-        <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
+        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Carry Pouch" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Carry Pouch" alt="Sage Green Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Sage Green Pouch</h3>
-            <p class="text-slate-500 text-sm font-medium">New Colors</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">New Colors</p>
         </a>
 
-        <!-- Product Card 3 -->
-        <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
+        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Cork" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Cork" alt="Hemp Series" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Limited Hemp Series</h3>
-            <p class="text-slate-500 text-sm font-medium">Limited Edition</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Limited Edition</p>
         </a>
 
-        <!-- Product Card 4 -->
-        <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
+        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/summer" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/summer" alt="Summer Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Summer Accessory Pack</h3>
-            <p class="text-slate-500 text-sm font-medium">Fresh Release</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Fresh Release</p>
         </a>
+        
     </div>
 </section>
+
+<style>
+    /* Styling the horizontal scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1; /* slate-300 */
+        border-radius: 10px;
+    }
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #475569; /* slate-600 */
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #94a3b8; /* slate-400 */
+    }
+</style>
 
 <!-- Required custom utility for clean scrolling -->
 <style>
@@ -507,57 +522,64 @@ mobileDashBtn.addEventListener('click', () => {
 <section class="max-w-7xl mx-auto px-4 py-16">
     <div class="mb-8">
         <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Recently Viewed</h2>
-        <p class="text-slate-500 font-medium text-sm mt-1">Pick up where you left off.</p>
+        <p class="text-slate-500 dark:text-slate-400 font-medium text-sm mt-1">Pick up where you left off.</p>
     </div>
 
-    <!-- Horizontal Scroll -->
-     <div class="flex gap-6 overflow-x-auto pb-8 snap-x scrollbar-hide">
+    <div class="flex gap-6 overflow-x-auto pb-6 snap-x custom-scrollbar">
         
-        <!-- Product Card 1 -->
         <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Artist Series Tote" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Artist Series Tote" alt="Artist Series Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Artist Series Tote</h3>
-            <p class="text-slate-500 text-sm font-medium">Latest Design</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Latest Design</p>
         </a>
 
-        <!-- Product Card 2 -->
         <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Carry Pouch" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Carry Pouch" alt="Carry Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Carry Pouch</h3>
-            <p class="text-slate-500 text-sm font-medium">New Colors</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">New Colors</p>
         </a>
 
-        <!-- Product Card 3 -->
         <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/Work & Study" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/Work & Study" alt="Work & Study" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Work & Study</h3>
-            <p class="text-slate-500 text-sm font-medium">Limited Edition</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Limited Edition</p>
         </a>
 
-        <!-- Product Card 4 -->
         <a href="#" class="min-w-[280px] sm:min-w-[320px] snap-start group">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/beach Trips" 
-                     alt="New Design" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="assets/beach Trips" alt="Beach Trips" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Beach Trips</h3>
-            <p class="text-slate-500 text-sm font-medium">Fresh Release</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Fresh Release</p>
         </a>
     </div>
 </section>
+
+<style>
+    /* Styling the horizontal scrollbar track */
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 6px;
+    }
+    /* Styling the scrollbar handle */
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1; /* slate-300 */
+        border-radius: 10px;
+    }
+    /* Dark mode handle color */
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #475569; /* slate-600 */
+    }
+    /* Hover effect */
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #94a3b8; /* slate-400 */
+    }
+</style>
 
 <style>
     .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -638,7 +660,7 @@ mobileDashBtn.addEventListener('click', () => {
     }
     lucide.createIcons();
 </script>
- <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+<footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
            <div>
     <a href="index.html">
@@ -691,6 +713,19 @@ mobileDashBtn.addEventListener('click', () => {
                 <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
             </div>
         </div>
+        <div class="max-w-7xl mx-auto px-6 text-center pt-8 border-t border-slate-200 dark:border-slate-800">
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            &copy; <span id="year"></span> <span class="font-bold text-slate-900 dark:text-white">EcoTote</span>. All rights reserved.
+        </p>
+        <p class="text-slate-400 dark:text-slate-600 text-xs mt-2">
+            Crafted for a sustainable future.
+        </p>
+    </div>
+    <script>
+        // Set the current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    </script>
     </footer>
 
     

@@ -36,18 +36,18 @@
             
 
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
-    <a href="index.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home</a>
-    <a href="home2.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Aboutus</a>
-    <a href="shop.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Shop</a>
-    <a href="categories.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Categories</a>
-    <a href="deals.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Deals</a>
-    <a href="blog.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Blog</a>
-    <a href="contact.html" class="hover:text-indigo-600 transition-colors whitespace-nowrap">Contact</a>
+    <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
+    <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
+    <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
+    <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
+    <a href="blog.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Blog</a>
+    <a href="contact.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Contact</a>
     
     <div class="relative" x-data="{ open: false }" @click.outside="open = false">
         
-        <button @click="open = !open" class="flex items-center gap-1 hover:text-indigo-600 transition-colors">
+        <button @click="open = !open" class="flex items-center gap-1 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
             Dashboard
             <span class="text-[10px] transform transition-transform duration-200" :class="open ? 'rotate-180' : ''">▼</span>
         </button>
@@ -59,7 +59,7 @@
                     lg:absolute lg:top-full lg:right-0 lg:mt-2
                     block pl-4 py-2 lg:p-2">
             
-            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            <a href="user.html" @click="open = false" class="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
                 User
             </a>
         </div>
@@ -77,7 +77,6 @@
                     <span id="themeIcon">🌙</span>
                 </button>
                 <button id="rtlToggle" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold uppercase">LTR</button>
-                <a href="shop.html" class="bg-primary text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-teal-700">Shop Now</a>
                 <a href="login.html" class="border border-primary text-primary px-4 py-2 rounded-lg font-medium text-sm hover:bg-primary/10">Login</a>
             </div>
 
@@ -107,9 +106,7 @@
         <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-4">
     
     <div class="flex gap-3">
-        <a href="shop.html" class="flex-1 text-center bg-primary text-white py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all active:scale-95 shadow-md">
-            Shop Now
-        </a>
+       
         <a href="login.html" class="flex-1 text-center border border-primary text-primary py-2.5 rounded-lg font-medium hover:bg-primary/10 transition-all active:scale-95">
             Login
         </a>
@@ -231,109 +228,107 @@ mobileDashBtn.addEventListener('click', () => {
     });
 </script>
 <!-- Payment Section: Signature Gift Set -->
-<section x-data="{ selectedMethod: 'upi', showSuccess: false }" class="max-w-5xl mx-auto px-6 py-12">
+<section x-data="{ selectedMethod: 'upi', showSuccess: false }" class="max-w-7xl mx-auto px-4 py-12">
     
     <!-- Success Modal -->
-    <div x-show="showSuccess" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm" x-cloak>
-        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl text-center max-w-sm w-full shadow-2xl border border-slate-100 dark:border-slate-800">
-            <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="check-circle" class="w-8 h-8 text-teal-600 dark:text-teal-400"></i>
-    <script>
+    <div x-show="showSuccess" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" x-cloak>
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-sm text-center max-w-sm w-full shadow-2xl">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check" class="w-8 h-8"></i>
+            </div>
+                           <script>
   lucide.createIcons();
 </script>
-            </div>
-            <h2 class="text-2xl font-bold dark:text-white">Gift Set Purchased!</h2>
-            <p class="text-slate-500 mt-2">Your premium gift set #VX-8821 is being prepared.</p>
-            <a href="shop.html">
-    <button @click="showSuccess = false" class="mt-6 w-full flex items-center justify-center gap-2 bg-teal-700 dark:bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-800 dark:hover:bg-teal-700 transition-all">
-        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-        Continue Shopping
-    </button>
-</a>
+            <h2 class="text-xl font-bold dark:text-white">Order Confirmed!</h2>
+            <a href="shop.html" class="block mt-6 bg-teal-700 text-white py-3 rounded-sm font-bold hover:bg-teal-800 transition-colors">Continue Shopping</a>
         </div>
     </div>
 
-    <!-- Main Payment Container -->
-    <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800 p-8 lg:p-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <!-- Main Layout: Grid with Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Left Column: Checkout Steps -->
+        <div class="lg:col-span-2 space-y-4">
             
-            <!-- Payment Column -->
-            <div class="space-y-6">
-                <h2 class="text-2xl font-bold dark:text-white">Select Payment</h2>
-                
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- UPI -->
-                    <div @click="selectedMethod = 'upi'" 
-                         :class="selectedMethod === 'upi' ? 'ring-2 ring-teal-600 bg-teal-50/50 shadow-inner' : 'border-2 border-slate-200 hover:border-teal-300'"
-                         class="aspect-square flex flex-col items-center justify-center p-6 rounded-3xl cursor-pointer transition-all duration-300">
-                        <div class="w-16 h-16 mb-4 bg-teal-700 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg">UPI</div>
-                        <span class="font-bold text-sm">UPI / QR</span>
+            <!-- Step 1: Payment Selection -->
+            <div class="bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+                <h2 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-white">
+                    <span class="bg-teal-700 text-white w-6 h-6 flex items-center justify-center text-xs rounded-full">1</span> 
+                    PAYMENT OPTIONS
+                </h2>
+
+                <div class="space-y-3">
+                    <!-- UPI Selection -->
+                    <div class="border p-4 cursor-pointer transition-all hover:bg-slate-50 dark:hover:bg-slate-800" 
+                         :class="selectedMethod === 'upi' ? 'border-teal-700 bg-teal-50/30' : 'border-slate-200'"
+                         @click="selectedMethod = 'upi'">
+                        <label class="flex items-center gap-4 font-bold text-sm cursor-pointer dark:text-white">
+                            <input type="radio" name="pay" class="accent-teal-700" checked> UPI / QR Code
+                        </label>
                     </div>
-                    <!-- Card -->
-                    <div @click="selectedMethod = 'card'" 
-                         :class="selectedMethod === 'card' ? 'ring-2 ring-teal-600 bg-teal-50/50 shadow-inner' : 'border-2 border-slate-200 hover:border-teal-300'"
-                         class="aspect-square flex flex-col items-center justify-center p-6 rounded-3xl cursor-pointer transition-all duration-300">
-                        <div class="w-16 h-16 mb-4 bg-slate-900 rounded-2xl p-3 flex flex-col justify-between shadow-lg">
-                            <div class="w-5 h-3.5 bg-yellow-500 rounded-sm"></div>
-                            <div class="flex justify-end gap-1">
-                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-orange-500/80"></div>
-                            </div>
-                        </div>
-                        <span class="font-bold text-sm">Credit/Debit</span>
+                    
+                    <!-- Card Selection -->
+                    <div class="border p-4 cursor-pointer transition-all hover:bg-slate-50 dark:hover:bg-slate-800" 
+                         :class="selectedMethod === 'card' ? 'border-teal-700 bg-teal-50/30' : 'border-slate-200'"
+                         @click="selectedMethod = 'card'">
+                        <label class="flex items-center gap-4 font-bold text-sm cursor-pointer dark:text-white">
+                            <input type="radio" name="pay" class="accent-teal-700"> Credit / Debit Card
+                        </label>
                     </div>
                 </div>
 
-               <button @click="showSuccess = true;" 
-        class="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-4 rounded-xl font-bold hover:scale-[1.01] transition-all shadow-lg">
-    Pay 
-</button>
+                <div class="mt-8">
+                    <!-- High-Conversion "Pay Now" Button (Flipkart Orange) -->
+                    <button @click="showSuccess = true" 
+                            class="w-full lg:w-auto bg-[#fb641b] text-white px-16 py-4 font-bold uppercase tracking-wide hover:bg-[#d65715] shadow-lg transition-all">
+                        Pay Now
+                    </button>
+                </div>
             </div>
-
-            <!-- Product Card Column -->
-           <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-6">
-    <!-- Image -->
-    <div class="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
-        <img src="assets/Work & Study" 
-             alt="Signature Tote Collection" 
-             class="w-full h-full object-cover">
-    </div>
-
-    <div>
-        <!-- Title & Subtitle -->
-        <p class="font-bold text-xl leading-tight text-slate-900 dark:text-white">
-            Signature Tote Collection
-        </p>
-        <p class="text-slate-500 dark:text-slate-400 mt-1 font-medium">
-            Curated 3-Piece Sustainable Bundle
-        </p>
-
-        <!-- Product Highlights -->
-        <div class="mt-4 flex flex-wrap gap-2">
-            <span class="text-xs bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 px-2 py-1 rounded-md font-semibold">
-                Sustainable Canvas
-            </span>
-            <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-md font-semibold">
-                Multi-Purpose
-            </span>
         </div>
 
-        <!-- Price Tag -->
-        <div class="mt-6 flex items-center justify-between">
-            <span class="text-slate-400 dark:text-slate-500 font-medium">Total</span>
-            <span class="text-xl font-bold text-teal-700 dark:text-teal-400"> $49.00</span>
-        </div>
-    </div>
-</div>
+        <!-- Right Column: Sticky Price Summary -->
+        <div class="lg:col-span-1">
+            <div class="bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800 p-6 sticky top-4">
+                <h3 class="font-bold text-slate-500 uppercase text-sm mb-4">Price Details</h3>
+                <div class="space-y-4 text-sm dark:text-slate-300">
+                    <div class="flex justify-between">
+                        <span>Price (1 Item)</span>
+                        <span>$49.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Delivery Charges</span>
+                        <span class="text-green-600 font-bold">FREE</span>
+                    </div>
+                    <div class="border-t border-dashed pt-4 flex justify-between font-bold text-lg text-slate-900 dark:text-white">
+                        <span>Total Payable</span>
+                        <span class="text-teal-700">$49.00</span>
+                    </div>
+                </div>
+                
+                <!-- Product Snippet -->
+                <div class="mt-6 flex gap-4 border-t pt-6">
+                    <img src="assets/Work & Study" class="w-16 h-16 object-cover rounded-sm">
+                    <div>
+                        <p class="text-sm font-bold dark:text-white leading-tight">Laptop & Work Bag</p>
+                        <p class="text-xs text-slate-500 mt-1">Qty: 1</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Initialize Icons -->
+<script>
+    lucide.createIcons();
+</script>
 
 <style>[x-cloak] { display: none !important; }</style>
 
 <!-- Required Script for Interactivity -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-   <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
+<footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16 mt-20">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
            <div>
     <a href="index.html">
@@ -386,6 +381,19 @@ mobileDashBtn.addEventListener('click', () => {
                 <button class="bg-primary text-white w-full py-3 rounded-lg font-medium hover:bg-teal-700">Subscribe</button>
             </div>
         </div>
+        <div class="max-w-7xl mx-auto px-6 text-center pt-8 border-t border-slate-200 dark:border-slate-800">
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            &copy; <span id="year"></span> <span class="font-bold text-slate-900 dark:text-white">EcoTote</span>. All rights reserved.
+        </p>
+        <p class="text-slate-400 dark:text-slate-600 text-xs mt-2">
+            Crafted for a sustainable future.
+        </p>
+    </div>
+    <script>
+        // Set the current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    </script>
     </footer>
 
     

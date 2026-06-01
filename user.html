@@ -256,42 +256,42 @@
             </button>
         </div>
         
-        <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left">
-                <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 uppercase text-xs">
-                    <tr>
-                        <th class="px-6 py-4">SKU</th>
-                        <th class="px-6 py-4">Product Name</th>
-                        <th class="px-6 py-4">Status</th>
-                        <th class="px-6 py-4">Stock Left</th>
-                        <th class="px-6 py-4 text-right">Wholesale Price</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                        <td class="px-6 py-4 font-bold">#B-001</td>
-                        <td class="px-6 py-4 font-medium">Cotton Tote (Organic)</td>
-                        <td class="px-6 py-4"><span class="px-2 py-1 bg-red-100 text-red-600 rounded-md text-xs font-bold">Low Stock</span></td>
-                        <td class="px-6 py-4 font-bold text-red-500">45 units</td>
-                        <td class="px-6 py-4 text-right text-teal-600 font-bold">₹199 / unit</td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                        <td class="px-6 py-4 font-bold">#J-002</td>
-                        <td class="px-6 py-4 font-medium">Jute Grocery Bag</td>
-                        <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-600 rounded-md text-xs font-bold">Healthy</span></td>
-                        <td class="px-6 py-4">850 units</td>
-                        <td class="px-6 py-4 text-right text-teal-600 font-bold">₹149 / unit</td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                        <td class="px-6 py-4 font-bold">#C-005</td>
-                        <td class="px-6 py-4 font-medium">Canvas Laptop Sleeve</td>
-                        <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-600 rounded-md text-xs font-bold">Healthy</span></td>
-                        <td class="px-6 py-4">210 units</td>
-                        <td class="px-6 py-4 text-right text-teal-600 font-bold">₹399 / unit</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+       <div class="overflow-x-auto border border-slate-200 dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800">
+    <table class="w-full text-sm text-left whitespace-nowrap">
+        <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 uppercase text-[10px] md:text-xs">
+            <tr>
+                <th class="px-4 md:px-6 py-4">SKU</th>
+                <th class="px-4 md:px-6 py-4">Product Name</th>
+                <th class="px-4 md:px-6 py-4">Status</th>
+                <th class="px-4 md:px-6 py-4">Stock</th>
+                <th class="px-4 md:px-6 py-4 text-right">Price</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+            <!-- Row Item -->
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-bold text-slate-900 dark:text-white">#B-001</td>
+                <td class="px-4 md:px-6 py-4 font-medium text-slate-700 dark:text-slate-300">Cotton Tote (Organic)</td>
+                <td class="px-4 md:px-6 py-4">
+                    <span class="px-2 py-1 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-md text-[10px] font-bold">Low Stock</span>
+                </td>
+                <td class="px-4 md:px-6 py-4 font-bold text-red-500">45</td>
+                <td class="px-4 md:px-6 py-4 text-right text-teal-600 dark:text-teal-400 font-bold">₹199</td>
+            </tr>
+            
+            <!-- Row Item -->
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                <td class="px-4 md:px-6 py-4 font-bold text-slate-900 dark:text-white">#J-002</td>
+                <td class="px-4 md:px-6 py-4 font-medium text-slate-700 dark:text-slate-300">Jute Grocery Bag</td>
+                <td class="px-4 md:px-6 py-4">
+                    <span class="px-2 py-1 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-md text-[10px] font-bold">Healthy</span>
+                </td>
+                <td class="px-4 md:px-6 py-4 font-medium text-slate-600 dark:text-slate-400">850</td>
+                <td class="px-4 md:px-6 py-4 text-right text-teal-600 dark:text-teal-400 font-bold">₹149</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
     </div>
 </div>
 
