@@ -20,7 +20,16 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300 text-slate-900 dark:text-slate-100">
 
- <header class="fixed top-0 w-full bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 z-[60] flex items-center justify-between px-3 py-3 h-16">
+<header x-data="{ 
+    dir: localStorage.getItem('dir') || 'ltr',
+    toggleDir() {
+        this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr';
+        document.documentElement.dir = this.dir;
+        localStorage.setItem('dir', this.dir);
+    }
+}" 
+x-init="document.documentElement.dir = dir"
+class="fixed top-0 w-full bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 z-[60] flex items-center justify-between px-3 py-3 h-16">
     
     <!-- Left Section: Menu & Logo -->
     <div class="flex items-center gap-2 shrink-0">
@@ -32,13 +41,25 @@
             <svg class="w-7 h-7 text-teal-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
             </svg>
-            <!-- REMOVED 'hidden sm:block' SO IT SHOWS ON ALL SIZES -->
-            <span class="text-lg font-bold text-teal-700 tracking-tight">EcoTote</span>
+            <span class="text-lg font-bold text-teal-700 tracking-tight hidden sm:block">EcoTote</span>
         </a>
+    </div>
+
+    <!-- Center Section: Welcome Message -->
+    <div class="flex items-center justify-center px-2 flex-grow min-w-0">
+        <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 truncate px-2">
+            Welcome,User!
+        </span>
     </div>
 
     <!-- Right Section: Action Buttons -->
     <div class="flex items-center gap-1.5 shrink-0">
+        <!-- Direction Toggle (LTR/RTL) -->
+        <button @click="toggleDir()" 
+                class="w-9 h-9 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-[10px] font-bold uppercase">
+            <span x-text="dir"></span>
+        </button>
+
         <!-- Dark Mode -->
         <button @click="dark = !dark; localStorage.setItem('dark', dark)" 
                 class="w-9 h-9 flex items-center justify-center border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
@@ -47,7 +68,7 @@
         </button>
         
         <!-- Notification Bell -->
-        <button class="w-9 h-9 flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg relative transition-colors">
+        <button class="hidden sm:flex w-9 h-9 items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg relative transition-colors">
             <i data-lucide="bell" class="w-4 h-4 text-slate-700 dark:text-slate-300"></i>
             <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
         </button>

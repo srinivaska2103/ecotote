@@ -37,7 +37,7 @@
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
     <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
     <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">About us</a>
     <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
     <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
     <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
@@ -88,7 +88,7 @@
     <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
         <a href="index.html" class="block py-2">Home</a>
         <a href="home2.html" class="block py-2">Home2</a>
-         <a href="aboutus.html" class="block py-2">Aboutus</a>
+         <a href="aboutus.html" class="block py-2">About us</a>
         <a href="shop.html" class="block py-2">Shop</a>
         <a href="categories.html" class="block py-2">Categories</a>
         <a href="deals.html" class="block py-2">Deals</a>
@@ -462,37 +462,57 @@ mobileDashBtn.addEventListener('click', () => {
 
     <div class="flex gap-6 overflow-x-auto pb-8 snap-x custom-scrollbar">
         
-        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
+        <!-- Midnight Tote -->
+        <div class="min-w-[280px] sm:min-w-[320px] snap-start group flex flex-col">
+            <a href="shop.html" class="block aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
                 <img src="assets/Urban Minimal Tote" alt="Midnight Tote" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
+            </a>
             <h3 class="font-bold text-slate-900 dark:text-white">Midnight Tote</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Latest Design</p>
-        </a>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">Latest Design - $49.00</p>
+            <div class="flex gap-2 mt-auto">
+                <a href="shop.html" class="flex-1 bg-primary text-white text-sm py-2.5 rounded-xl font-bold text-center hover:bg-teal-700 transition-all">Buy Now</a>
+                <a href="categories.html" class="flex-1 border border-primary text-primary text-sm py-2.5 rounded-xl font-bold text-center hover:bg-primary/10 transition-all">Add to Cart</a>
+            </div>
+        </div>
 
-        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
+        <!-- Sage Green Pouch -->
+        <div class="min-w-[280px] sm:min-w-[320px] snap-start group flex flex-col">
+            <a href="shop.html" class="block aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
                 <img src="assets/Carry Pouch" alt="Sage Green Pouch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
+            </a>
             <h3 class="font-bold text-slate-900 dark:text-white">Sage Green Pouch</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">New Colors</p>
-        </a>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">New Colors - $15.00</p>
+            <div class="flex gap-2 mt-auto">
+                <a href="shop.html" class="flex-1 bg-primary text-white text-sm py-2.5 rounded-xl font-bold text-center hover:bg-teal-700 transition-all">Buy Now</a>
+                <a href="categories.html" class="flex-1 border border-primary text-primary text-sm py-2.5 rounded-xl font-bold text-center hover:bg-primary/10 transition-all">Add to Cart</a>
+            </div>
+        </div>
 
-        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
+        <!-- Limited Hemp Series -->
+        <div class="min-w-[280px] sm:min-w-[320px] snap-start group flex flex-col">
+            <a href="shop.html" class="block aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
                 <img src="assets/Cork" alt="Hemp Series" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
+            </a>
             <h3 class="font-bold text-slate-900 dark:text-white">Limited Hemp Series</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Limited Edition</p>
-        </a>
-
-        <a href="shop.html" class="min-w-[280px] sm:min-w-[320px] snap-start group">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                <img src="assets/summer" alt="Summer Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">Limited Edition - $55.00</p>
+            <div class="flex gap-2 mt-auto">
+                <a href="shop.html" class="flex-1 bg-primary text-white text-sm py-2.5 rounded-xl font-bold text-center hover:bg-teal-700 transition-all">Buy Now</a>
+                <a href="categories.html" class="flex-1 border border-primary text-primary text-sm py-2.5 rounded-xl font-bold text-center hover:bg-primary/10 transition-all">Add to Cart</a>
             </div>
+        </div>
+
+        <!-- Summer Accessory Pack -->
+        <div class="min-w-[280px] sm:min-w-[320px] snap-start group flex flex-col">
+            <a href="shop.html" class="block aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                <img src="assets/summer" alt="Summer Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </a>
             <h3 class="font-bold text-slate-900 dark:text-white">Summer Accessory Pack</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Fresh Release</p>
-        </a>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">Fresh Release - $32.00</p>
+            <div class="flex gap-2 mt-auto">
+                <a href="shop.html" class="flex-1 bg-primary text-white text-sm py-2.5 rounded-xl font-bold text-center hover:bg-teal-700 transition-all">Buy Now</a>
+                <a href="categories.html" class="flex-1 border border-primary text-primary text-sm py-2.5 rounded-xl font-bold text-center hover:bg-primary/10 transition-all">Add to Cart</a>
+            </div>
+        </div>
         
     </div>
 </section>

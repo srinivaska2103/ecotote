@@ -35,7 +35,7 @@
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
     <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
     <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">About us</a>
     <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
     <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
     <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
@@ -86,7 +86,7 @@
     <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
         <a href="index.html" class="block py-2">Home</a>
         <a href="home2.html" class="block py-2">Home2</a>
-         <a href="aboutus.html" class="block py-2">Aboutus</a>
+         <a href="aboutus.html" class="block py-2">About us</a>
         <a href="shop.html" class="block py-2">Shop</a>
         <a href="categories.html" class="block py-2">Categories</a>
         <a href="deals.html" class="block py-2">Deals</a>
@@ -258,8 +258,9 @@ mobileDashBtn.addEventListener('click', () => {
 <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
     <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center">Featured Collections</h2>
     
-    <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6">
         
+        <!-- Card 1 -->
         <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
                 <img src="assets/Everyday Tote Bags" alt="Everyday Tote" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -269,17 +270,13 @@ mobileDashBtn.addEventListener('click', () => {
             </div>
             <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Everyday Tote Bags</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$49.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
                 <img src="assets/Organic Cotton Totes" alt="Organic Cotton" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -287,17 +284,13 @@ mobileDashBtn.addEventListener('click', () => {
             </div>
             <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Organic Cotton Totes</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$35.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
                 <img src="assets/Recycled Canvas Bags" alt="Recycled Canvas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -305,36 +298,27 @@ mobileDashBtn.addEventListener('click', () => {
             </div>
             <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Recycled Canvas Bags</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$42.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
         </div>
-         <div class="group relative flex flex-col space-y-3">
+
+        <!-- Card 4 -->
+        <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
-                <img src="assets/Reusable Bags" alt="Recycled Canvas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="assets/Reusable Bags" alt="Reusable" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 rounded-full hover:scale-110 transition-transform text-slate-600 hover:text-red-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
             </div>
-            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Recycled Canvas Bags</h3>
+            <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Reusable Bags</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$25.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
         </div>
 
-       
-
+        <!-- Card 5 -->
         <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
                 <img src="assets/Travel Accessories" alt="Travel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -342,17 +326,13 @@ mobileDashBtn.addEventListener('click', () => {
             </div>
             <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Travel Accessories</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$55.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
         </div>
 
+        <!-- Card 6 -->
         <div class="group relative flex flex-col space-y-3">
             <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
                 <img src="assets/Eco-Friendly Pouches" alt="Pouches" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -360,16 +340,11 @@ mobileDashBtn.addEventListener('click', () => {
             </div>
             <h3 class="font-medium text-slate-800 dark:text-slate-200 text-sm lg:text-base">Eco-Friendly Pouches</h3>
             <div class="flex flex-col gap-2">
-                <a href="shop.html">
-              <button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button>
-
-                </a>
-                <a href="categories.html">
-                <button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button>
-
-                </a>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">$18.00</p>
+                <a href="shop.html"><button class="w-full bg-primary text-white text-xs py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">Buy Now</button></a>
+                <a href="categories.html"><button class="w-full border border-primary text-primary text-xs py-2 rounded-lg font-medium hover:bg-primary/10 transition-all">Add to Cart</button></a>
             </div>
-            </div>
+        </div>
 
     </div>
 </section>

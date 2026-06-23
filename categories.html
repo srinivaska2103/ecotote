@@ -37,7 +37,7 @@
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
     <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
     <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">About us</a>
     <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
     <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
     <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
@@ -88,7 +88,7 @@
     <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
         <a href="index.html" class="block py-2">Home</a>
         <a href="home2.html" class="block py-2">Home2</a>
-         <a href="aboutus.html" class="block py-2">Aboutus</a>
+         <a href="aboutus.html" class="block py-2">About us</a>
         <a href="shop.html" class="block py-2">Shop</a>
         <a href="categories.html" class="block py-2">Categories</a>
         <a href="deals.html" class="block py-2">Deals</a>
@@ -528,66 +528,64 @@ mobileDashBtn.addEventListener('click', () => {
     <!-- Product Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
         
-        <!-- Product Card -->
+        <!-- Product Card 1 -->
         <div class="group">
             <div class="relative aspect-square rounded-3xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
                 <img src="assets/Organic Cotton Totes" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Organic Cotton</span>
                 
-                <!-- Eco Badge -->
-                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
-                    Organic Cotton
-                </span>
-
-                <!-- Quick View Button -->
-               <a href="shop.html" class="absolute bottom-4 left-4 right-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg active:scale-[0.98] text-center">
-    Quick View
-</a>
+                <div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a href="shop.html" class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Quick View</a>
+                    <button class="bg-primary text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Add to Cart</button>
+                </div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Everyday Tote</h3>
-            <p class="text-slate-500 font-medium text-sm">$45.00</p>
+            <p class="text-slate-500 font-bold text-lg mt-1">$45.00</p>
         </div>
 
-        <!-- Repeat for 4-8 products -->
+        <!-- Product Card 2 -->
         <div class="group">
             <div class="relative aspect-square rounded-3xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
                 <img src="assets/Recycled Canvas Bags" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
-                    Recycled Canvas
-                </span>
-                          <a href="shop.html" class="absolute bottom-4 left-4 right-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg active:scale-[0.98] text-center">
-    Quick View
-</a>
+                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Recycled Canvas</span>
+                
+                <div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a href="shop.html" class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Quick View</a>
+                    <button class="bg-primary text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Add to Cart</button>
+                </div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Foldable Shopper</h3>
-            <p class="text-slate-500 font-medium text-sm">$25.00</p>
+            <p class="text-slate-500 font-bold text-lg mt-1">$25.00</p>
         </div>
 
+        <!-- Product Card 3 -->
         <div class="group">
             <div class="relative aspect-square rounded-3xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
                 <img src="assets/Foldable Shopper" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
-                    Hemp Fabric
-                </span>
-                          <a href="shop.html" class="absolute bottom-4 left-4 right-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg active:scale-[0.98] text-center">
-    Quick View
-</a>
+                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Hemp Fabric</span>
+                
+                <div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a href="shop.html" class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Quick View</a>
+                    <button class="bg-primary text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Add to Cart</button>
+                </div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Carry Pouch</h3>
-            <p class="text-slate-500 font-medium text-sm">$18.00</p>
+            <p class="text-slate-500 font-bold text-lg mt-1">$18.00</p>
         </div>
 
+        <!-- Product Card 4 -->
         <div class="group">
             <div class="relative aspect-square rounded-3xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
                 <img src="assets/bloghero" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
-                    Natural Blend
-                </span>
-                         <a href="shop.html" class="absolute bottom-4 left-4 right-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg active:scale-[0.98] text-center">
-    Quick View
-</a>
+                <span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Natural Blend</span>
+                
+                <div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a href="shop.html" class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Quick View</a>
+                    <button class="bg-primary text-white py-2.5 rounded-xl font-semibold shadow-lg active:scale-[0.98] text-center text-sm">Add to Cart</button>
+                </div>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-white">Work Satchel</h3>
-            <p class="text-slate-500 font-medium text-sm">$85.00</p>
+            <p class="text-slate-500 font-bold text-lg mt-1">$85.00</p>
         </div>
 
     </div>

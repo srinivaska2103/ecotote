@@ -37,7 +37,7 @@
 <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 font-medium text-xs xl:text-sm 2xl:text-base">
     <a href="index.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home</a>
     <a href="home2.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Home2</a>
-    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Aboutus</a>
+    <a href="aboutus.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">About us</a>
     <a href="shop.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Shop</a>
     <a href="categories.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Categories</a>
     <a href="deals.html" class="hover:text-teal-700 dark:hover:text-teal-400 transition-colors whitespace-nowrap">Deals</a>
@@ -88,7 +88,7 @@
     <div id="mobileMenu" class="hidden lg:hidden absolute w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 space-y-3 z-40">
         <a href="index.html" class="block py-2">Home</a>
         <a href="home2.html" class="block py-2">Home2</a>
-         <a href="aboutus.html" class="block py-2">Aboutus</a>
+         <a href="aboutus.html" class="block py-2">About us</a>
         <a href="shop.html" class="block py-2">Shop</a>
         <a href="categories.html" class="block py-2">Categories</a>
         <a href="deals.html" class="block py-2">Deals</a>
@@ -274,6 +274,63 @@ mobileDashBtn.addEventListener('click', () => {
         </div>
     </div>
 </section>
+<section class="max-w-7xl mx-auto px-4 py-20">
+    <div class="bg-slate-900 rounded-[2.5rem] p-12 lg:p-20 text-white relative overflow-hidden">
+        
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="text-center mb-16 relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Collective Impact</h2>
+            <p class="text-slate-400 font-medium max-w-lg mx-auto">Every purchase contributes to a cleaner, greener future. Here is the progress we've made together.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
+            
+            <!-- Stat 1 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="shopping-bag" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">125k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Bags Replaced</div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="package" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">85k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Products Sold</div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="trash-2" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">40</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Waste Prevented</div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="text-center group">
+                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="w-8 h-8 mx-auto"></i>
+                </div>
+                <div class="text-3xl lg:text-5xl font-bold mb-2">15k+</div>
+                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Members</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
 <section class="max-w-7xl mx-auto px-4 py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
@@ -584,63 +641,7 @@ mobileDashBtn.addEventListener('click', () => {
     </div>
 </div>
 </section>
-<section class="max-w-7xl mx-auto px-4 py-20">
-    <div class="bg-slate-900 rounded-[2.5rem] p-12 lg:p-20 text-white relative overflow-hidden">
-        
-        <!-- Subtle Pattern Overlay -->
-        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 30px 30px;"></div>
 
-        <div class="text-center mb-16 relative z-10">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Collective Impact</h2>
-            <p class="text-slate-400 font-medium max-w-lg mx-auto">Every purchase contributes to a cleaner, greener future. Here is the progress we've made together.</p>
-        </div>
-
-        <!-- Stats Grid -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
-            
-            <!-- Stat 1 -->
-            <div class="text-center group">
-                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
-                    <i data-lucide="shopping-bag" class="w-8 h-8 mx-auto"></i>
-                </div>
-                <div class="text-3xl lg:text-5xl font-bold mb-2">125k+</div>
-                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Bags Replaced</div>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="text-center group">
-                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
-                    <i data-lucide="package" class="w-8 h-8 mx-auto"></i>
-                </div>
-                <div class="text-3xl lg:text-5xl font-bold mb-2">85k+</div>
-                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Products Sold</div>
-            </div>
-
-            <!-- Stat 3 -->
-            <div class="text-center group">
-                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
-                    <i data-lucide="trash-2" class="w-8 h-8 mx-auto"></i>
-                </div>
-                <div class="text-3xl lg:text-5xl font-bold mb-2">40</div>
-                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Waste Prevented</div>
-            </div>
-
-            <!-- Stat 4 -->
-            <div class="text-center group">
-                <div class="text-teal-400 mb-4 transform group-hover:scale-110 transition-transform">
-                    <i data-lucide="users" class="w-8 h-8 mx-auto"></i>
-                </div>
-                <div class="text-3xl lg:text-5xl font-bold mb-2">15k+</div>
-                <div class="text-slate-400 font-medium text-xs lg:text-sm uppercase tracking-widest">Members</div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<script>
-    lucide.createIcons();
-</script>
 <section class="max-w-7xl mx-auto px-4 py-20">
     <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Simple Steps to Change</h2>
